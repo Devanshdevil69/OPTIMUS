@@ -4,7 +4,7 @@
 Made with Python3 & Pyrogram
 ```
 
-Licenced Under The [GPU 3.0](LICENSE)
+Licensed Under The [GPL 3.0](LICENSE)
 
 ---
 
