@@ -1,1 +1,1 @@
-worker: python3 -m Vinci
+worker: python3 -m OPTIMUS
