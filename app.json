@@ -1,23 +1,23 @@
 
 {
 "name": "A Simple Pyrogram-Telegram Userbot",
-"repository": "https://github.com/ArpitaX/VinciUserbot",
-"logo": "https://avatars1.githubusercontent.com/u/34474300?s=200&v=4",
+"repository": "https://github.com/CRiMiNaL786/OPTIMUS",
+"logo": "https://telegra.ph/file/38e0b251dfc0d267d9a89.jpg",
 "keywords": ["python", "pyrogram", "telegram"],
 "env": {
     "API_ID": {
       "description": "A secret key for verifying the integrity of signed cookies.",
-      "value": "35673",
+      "value": "18306878",
       "required": "True"
     },
     "API_HASH": {
       "description": "The number of processes to run.",
-      "value": "fgu22jgee6",
+      "value": "0af2272c40823f81a514aaadc4a2091d",
       "required": "True"
     },
     "SESSION_STRING": {
       "description": "The Session String",
-      "value": "srtgdde#$-drygs",
+      "value": "0",
       "required": "True"
     },
     "BOT_TOKEN": {
