@@ -11,7 +11,7 @@ async def ping(client, message):
     await message.edit_text("`Pong!`")
     end = datetime.now()
     m_s = (end - start).microseconds / 1000 
-    await message.edit_text(f"**🏓Pong!**\n`{m_s} ms`")
+    await message.edit_text(f"**🏓PoNG!**\n`{m_s} ms`")
 
 
 
@@ -19,7 +19,7 @@ async def ping(client, message):
 async def alive(client, message):
     text="**OPTIMUS USERBOT**\n"
     text += f"\nPython Version: `{version_info[0]}.{version_info[1]}.{version_info[2]}`"
-    text += f"\nPyrogram Version: {__version__}"
+    text += f"\nPyrogram Version: `{__version__}`"
     text += f"\nCurrent Uptime: `{str(datetime.now() - StartTime).split('.')[0]}`"
     
     await message.edit_text(text)
