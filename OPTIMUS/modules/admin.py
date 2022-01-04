@@ -1,11 +1,11 @@
 from pyrogram import filters
 from pyrogram.types import ChatPermissions
-from Vinci import arpi
+from OPTIMUS import amaan, HANDLER
 import asyncio
 
 
 #----------- BAN ---------------#
-@arpi.on_message(filters.command("ban", ",") & filters.me)
+@amaan.on_message(filters.command("ban", HANDLER) & filters.me)
 async def ban(client, message):
     if message.reply_to_message.from_user:
         userid=message.reply_to_message.from_user.id 
@@ -42,7 +42,7 @@ async def ban(client, message):
 
 #-------------UNBAN-------------------#
 
-@arpi.on_message(filters.command("unban", ",") & filters.me)
+@amaan.on_message(filters.command("unban", HANDLER) & filters.me)
 async def unban(client, message):
     if message.reply_to_message.from_user:
         userid=message.reply_to_message.from_user.id 
@@ -78,7 +78,7 @@ async def unban(client, message):
 
 #--------------KICK-----------------#
 
-@arpi.on_message(filters.command("kick", ",") & filters.me)
+@amaan.on_message(filters.command("kick", HANDLER) & filters.me)
 async def kick(client, message):
     if message.reply_to_message.from_user:
         userid=message.reply_to_message.from_user.id 
@@ -116,7 +116,7 @@ async def kick(client, message):
 
 #-------------MUTE-------------------#
 
-@arpi.on_message(filters.command("mute", ",") & filters.me)
+@amaan.on_message(filters.command("mute", HANDLER) & filters.me)
 async def mute(client, message):
     if message. reply_to_message.from_user:
         userid=message.reply_to_message.from_user.id 
@@ -151,7 +151,7 @@ async def mute(client, message):
 
 #--------------UNMUTE----------------------#
 
-@arpi.on_message(filters.command("unmute", ",") & filters.me)
+@amaan.on_message(filters.command("unmute", HANDLER) & filters.me)
 async def unmute(client, message):
     if message. reply_to_message.from_user:
         userid=message.reply_to_message.from_user.id 
@@ -187,7 +187,7 @@ async def unmute(client, message):
 
 #-----------------PIN & UNPIN------------------------#
 
-@arpi.on_message(filters.command("pin", ",") & filters.me)
+@amaan.on_message(filters.command("pin", HANDLER) & filters.me)
 async def pin(client, message):
     if not message.reply_to_message:
         return await message.edit_text("`uff! uh fool. Reply to any message to pin")
@@ -200,7 +200,7 @@ async def pin(client, message):
     await asyncio.sleep(2)
     await message.delete()
 
-@arpi.on_message(filters.command("unpin", ",") & filters.me)
+@amaan.on_message(filters.command("unpin", HANDLER) & filters.me)
 async def unpin(client, message):
     if not message.reply_to_message:
         return await message.edit_text("`uff! uh fool. Reply to any message to pin")
@@ -215,7 +215,7 @@ async def unpin(client, message):
 
 #----------------PROMOTE & DEMOTE -----------------#
 
-@arpi.on_message(filters.command("promote", ",") & filters.me)
+@amaan.on_message(filters.command("promote", HANDLER) & filters.me)
 async def promote(client, message):
     try:
         title = "Admin"
@@ -243,7 +243,7 @@ async def promote(client, message):
         except:
             pass
 
-@arpi.on_message(filters.command("demote", ",") & filters.me)
+@amaan.on_message(filters.command("demote", HANDLER) & filters.me)
 async def demote(client, message):
     try:
         reply = message.reply_to_message
