@@ -3,7 +3,7 @@ from pyrogram import filters, __version__
 from sys import version_info
 from datetime import datetime
 import asyncio
-
+import time
 
 @amaan.on_message(filters.command("ping", HANDLER) & filters.me)
 async def ping(client, message):
