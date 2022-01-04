@@ -2,7 +2,7 @@ import os
 from datetime import datetime
 
 from pyrogram import filters
-from pyrogram.types import User, InlineKeyboardMarkup, InlineKeyboardButton, Message
+from pyrogram.types import User, InlineKeyboardMarkup, InlineKeyboardButton
 from pyrogram.raw import functions
 from pyrogram.errors import PeerIdInvalid
 from OPTIMUS import amaan, HANDLER
@@ -10,7 +10,7 @@ from OPTIMUS import amaan, HANDLER
 
 
 
-def ReplyCheck(message: Message):
+def ReplyCheck(message):
     reply_id = None
 
     if message.reply_to_message:
@@ -43,7 +43,7 @@ def FullName(user: User):
 
 
 @amaan.on_message(filters.command(["whois", "info"], HANDLER) & filters.me)
-async def whois(c: client, message: Message):
+async def whois(client, message):
     await message.edit_text("`Extracting User Data...`")
     cmd = message.command
     if not message.reply_to_message and len(cmd) == 1:
@@ -57,12 +57,12 @@ async def whois(c: client, message: Message):
         except ValueError:
             pass
     try:
-        user = await c.get_users(get_user)
+        user = await client.get_users(get_user)
     except PeerIdInvalid:
         await message.reply("I don't know that User.")
         return
-    common = await c.get_common_chats(user.id)
-    pfp = await c.get_profile_photos(user.id)
+    common = await client.get_common_chats(user.id)
+    pfp = await client.get_profile_photos(user.id)
     if not pfp:
         await message.edit_text(
             infotext.format(
@@ -82,9 +82,9 @@ async def whois(c: client, message: Message):
             disable_web_page_preview=True,
         )
     else:
-        dls = await c.download_media(pfp[0]["file_id"], file_name=f"{user.id}.png")
+        dls = await client.download_media(pfp[0]["file_id"], file_name=f"{user.id}.png")
         await message.delete()
-        await c.send_document(
+        await client.send_document(
             message.chat.id,
             dls,
             caption=infotext.format(
