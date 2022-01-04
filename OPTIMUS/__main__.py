@@ -1,12 +1,12 @@
-from Vinci import *
-from Vinci import arpi
+from OPTIMUS import *
+from OPTIMUS import amaan
 
-from Vinci.modules import *
-from Vinci.modules.assistant import *
+from OPTIMUS.modules import *
+from OPTIMUS.modules.assistant import *
 
 
 
 
 if __name__ == "__main__":
-    arpi.run()
+    amaan.run()
     god.run()
