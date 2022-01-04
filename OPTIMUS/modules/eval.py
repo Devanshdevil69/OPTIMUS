@@ -4,7 +4,7 @@ import os
 import re
 import subprocess
 from io import StringIO
-from Vinci import arpi
+from OPTIMUS import amaan, HANDLER
 from pyrogram import filters
 
 
@@ -18,7 +18,7 @@ async def aexec(code, client, message):
     return await locals()["__aexec"](client, message)
 
 
-@arpi.on_message(filters.command("eval", ",") & filters.me)
+@amaan.on_message(filters.command("eval", HANDLER) & filters.me)
 async def evaluate(client, message):
     status_message = await message.edit("`Running ...`")
     try:
@@ -68,10 +68,10 @@ async def evaluate(client, message):
         await status_message.edit(final_output)
 
 
-@arpi.on_message(filters.command("sh", ",") & filters.me)
+@amaan.on_message(filters.command("sh", HANDLER) & filters.me)
 async def terminal(client, message):
     if len(message.text.split()) == 1:
-        await message.edit(f"Usage: `{PREFIX}sh echo owo`")
+        await message.edit(f"Usage: `{HANDLER}sh echo owo`")
         return
     args = message.text.split(None, 1)
     teks = args[1]
