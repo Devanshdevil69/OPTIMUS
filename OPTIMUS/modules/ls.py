@@ -1,5 +1,7 @@
 from OPTIMUS import amaan, HANDLER
 from pyrogram import filters
+import os
+
 
 @amaan.on_message(filters.command("ls", HANDLER) & filters.me)
 async def ls(client, message):
