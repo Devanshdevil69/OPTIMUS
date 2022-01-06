@@ -4,10 +4,9 @@
    <a alt="OPTIMUS" width=400px></a>
 <p align="center">
    <a href="https://github.com/CRIMINAL786/OPTIMUS"><img src="https://telegra.ph/file/f85226ecf32e27572c7ea.jpg"
-
-[![AGPLv3 license](https://img.shields.io/badge/License-AGPL%20v3-green.svg)]( https://github.com/CRiMiNaL786/OPTIMUS#copyright--license)
+[![AGPLv3 license](https://img.shields.io/badge/LICENSE-AGPL%20v3-green.svg)]( https://github.com/CRiMiNaL786/OPTIMUS#copyright--license)
 <p align="center">
-   <a href="https://www.python.org/" alt="made-with-pytho an"> <img src="https://img.shields.io/badge/MADE%20WITH-PYTHON-black.svg?style=flat-square&logo=python&logoColor=blue&color=red" /></a>
+   <a href="https://www.python.org/" alt="made-with-pytho an"> <img src="https://img.shields.io/badge/MADE%20WITH-PYTHON+PYROGRAM-black.svg?style=flat-square&logo=python&logoColor=blue&color=red" /></a>
 
 
 ---
