@@ -40,4 +40,4 @@ python3 __main__.py
 
 
 # © Copyright 2022 
-[MoHaMMaD AmaaN](t.me/Criminal786)
+## [MoHaMMaD AmaaN](t.me/Criminal786)
