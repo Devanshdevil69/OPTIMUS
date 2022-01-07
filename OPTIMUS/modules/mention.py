@@ -1,5 +1,6 @@
 from OPTIMUS import amaan, HANDLER
 from pyrogram import filters
+import html
 
 # mention user 
 
@@ -20,7 +21,11 @@ async def mention(client, message):
         return
 
 
-# mention all 
+# mention all AND his helper
+
+def mention_html(user_id, name):
+    return u'<a href="tg://user?id={}">{}</a>'.format(user_id, html.escape(name))
+
 
 @amaan.on_message(filters.command("tagall", HANDLER) & filters.me)
 async def tag_all_users(client, message):
