@@ -8,7 +8,7 @@ import asyncio
 
 @amaan.on_message(filters.command("listmyusernames", HANDLER) & filters.me)
 async def mine(client, message):
-    result = await client(GetAdminedPublicChannels())
+    result = await amaan(GetAdminedPublicChannels())
     output_str = ""
     for channel_obj in result.chats:
         output_str += f"MY USERNAMES :-\n{channel_obj.title}\n@{channel_obj.username}\n\n"
