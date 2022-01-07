@@ -5,6 +5,8 @@ from datetime import datetime
 import asyncio
 import time
 
+#ping
+
 @amaan.on_message(filters.command("ping", HANDLER) & filters.me)
 async def ping(client, message):
     start = datetime.now()
@@ -13,7 +15,7 @@ async def ping(client, message):
     m_s = (end - start).microseconds / 1000 
     await message.edit_text(f"**🏓PoNG!**\n`{m_s} ms`")
 
-
+#alive
 
 @amaan.on_message(filters.command("alive", HANDLER) & filters.me)
 async def alive(client, message):
@@ -24,4 +26,10 @@ async def alive(client, message):
     
     await message.edit_text(text)
 
+#restart
     
+@amaan.on_message(filters.command("restart", HANDLER) & filters.me)
+async def restart(client, message):
+    await message.edit_text("**ReSTARTiNG**")
+    amaan.restart()
+    await message.edit_text("**ReSTARTeD**")
