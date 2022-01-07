@@ -2,7 +2,7 @@ from pyrogram import filters
 from pyrogram.types import ChatPermissions
 from OPTIMUS import amaan, HANDLER
 import asyncio
-from OPTIMUS.helpers.one import get_arg
+from OPTIMUS.helpers.one import get_arg, get_args
 
 #----------- BAN ---------------#
 @amaan.on_message(filters.command("ban", HANDLER) & filters.me)
