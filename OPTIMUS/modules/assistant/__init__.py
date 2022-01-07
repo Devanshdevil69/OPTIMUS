@@ -1,4 +1,4 @@
-from Vinci import god
+from OPTIMUS import amaan2
 
 
 from os.path import dirname, basename, isfile, join
