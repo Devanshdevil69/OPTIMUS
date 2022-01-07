@@ -31,5 +31,5 @@ async def alive(client, message):
 @amaan.on_message(filters.command("restart", HANDLER) & filters.me)
 async def restart(client, message):
     await message.edit_text("**ReSTARTiNG**")
-    amaan.restart()
+    client.restart()
     await message.edit_text("**ReSTARTeD**")
