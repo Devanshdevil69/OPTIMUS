@@ -25,11 +25,3 @@ async def alive(client, message):
     text += f"\nCurrent Uptime: `{str(datetime.now() - StartTime).split('.')[0]}`"
     
     await message.edit_text(text)
-
-#restart
-    
-@amaan.on_message(filters.command("restart", HANDLER) & filters.me)
-async def restart(client, message):
-    await message.edit_text("**ReSTARTiNG**")
-    client.restart()
-    await message.edit_text("**ReSTARTeD**")
