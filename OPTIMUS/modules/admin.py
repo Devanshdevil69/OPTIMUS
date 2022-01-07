@@ -224,7 +224,7 @@ async def promote(client, message):
             user = reply.from_user["id"]
             title = str(get_arg(message))
         else:
-            args = get_args(message)
+            args = get_arg(message)
         user = args[0]
         if len(args) > 1:
             title = " ".join(args[1:])
