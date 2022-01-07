@@ -2,7 +2,7 @@ from pyrogram import filters
 from pyrogram.types import ChatPermissions
 from OPTIMUS import amaan, HANDLER
 import asyncio
-
+from OPTIMUS.helpers.one import get_arg
 
 #----------- BAN ---------------#
 @amaan.on_message(filters.command("ban", HANDLER) & filters.me)
@@ -206,7 +206,7 @@ async def unpin(client, message):
         return await message.edit_text("`uff! uh fool. Reply to any message to pin")
 
     try:
-        await message.reply_to_message.pin()
+        await message.reply_to_message.unpin()
         await message.edit_text("UnPinned!")
     except Exception as e:
         await message.edit_text(str(e))
@@ -228,18 +228,18 @@ async def promote(client, message):
         user = args[0]
         if len(args) > 1:
             title = " ".join(args[1:])
-        get_user = await app.get_users(user)
-        await app.promote_chat_member(message.chat.id, user, can_manage_chat=True, can_change_info=True, can_delete_messages=True, can_restrict_members=True, can_invite_users=True, can_pin_messages=True, can_manage_voice_chats=True)
-        await message.edit(
+        get_user = await amaan.get_users(user)
+        await amaan.promote_chat_member(message.chat.id, user, can_manage_chat=True, can_change_info=True, can_delete_messages=True, can_restrict_members=True, can_invite_users=True, can_pin_messages=True, can_manage_voice_chats=True)
+        await message.edit_text(
             f"Successfully Promoted [{get_user.first_name}](tg://user?id={get_user.id}) with title {title}"
         )
 
     except Exception as e:
-        await message.edit(f"{e}")
+        await message.edit_text(f"{e}")
 
     if title:
         try:
-            await app.set_administrator_title(message.chat.id, user, title)
+            await amaan.set_administrator_title(message.chat.id, user, title)
         except:
             pass
 
@@ -252,7 +252,7 @@ async def demote(client, message):
         else:
             user = get_arg(message)
         get_user = await app.get_users(user)
-        await app.promote_chat_member(
+        await amaan.promote_chat_member(
             message.chat.id,
             user,
             is_anonymous=False,
@@ -265,10 +265,10 @@ async def demote(client, message):
             can_pin_messages=False,
             can_post_messages=False,
         )
-        await message.edit(
+        await message.edit_text(
             f"Successfully Demoted [{get_user.first_name}](tg://user?id={get_user.id})"
         )
     except Exception as e:
-        await message.edit(f"{e}")
+        await message.edit_text(f"{e}")
 
    
