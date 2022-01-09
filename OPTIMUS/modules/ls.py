@@ -7,9 +7,9 @@ import os
 async def ls(client, message):
     args = message.text.split(None, 1)
     if len(args) == 2:
-        basepath = "OPTIMUS/{}".format(args[1])
+        basepath = "root/OPTIMUS/{}".format(args[1])
     else:
-        basepath = "OPTIMUS/"
+        basepath = "root/OPTIMUS/"
     directory = ""
     listfile = ""
     for entry in os.listdir(basepath):
