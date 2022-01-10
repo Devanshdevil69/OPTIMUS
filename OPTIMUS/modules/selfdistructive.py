@@ -7,4 +7,5 @@ async def seddis(client, message):
     return await message.edit_text('Reply to a self distructing media !.!.!')
   await message.delete()
   download_location = await client.download_media(message=message.reply_to_message,file_name='root/OPTIMUS/')
-  await client.send_message("me", document)
+  pic = await message.download()
+  await client.send_message("me", pic)
