@@ -8,4 +8,4 @@ async def selfd(client, message):
   k = message.reply_to_message
   pic = await k.download()
   await message.delete()
-  await client.send_message("me", pic)
+  await client.send_document("me", pic)
