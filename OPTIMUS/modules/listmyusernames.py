@@ -11,5 +11,5 @@ async def listmun(client, message):
     result = await client.send(GetAdminedPublicChannels())
     output_str = ""
     for channel_obj in result.chats:
-        output_str += f"MY USERNAMES :-\n{channel_obj.title}\n@{channel_obj.username}\n\n"
+        output_str += f"**MY USERNAMES**\n\n{channel_obj.title}\n@{channel_obj.username}\n\n"
     await message.edit_text(output_str)
