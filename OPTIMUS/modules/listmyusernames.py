@@ -12,4 +12,4 @@ async def listmun(client, message):
     output_str = ""
     for channel_obj in result.chats:
         output_str += f"{channel_obj.title}\n@{channel_obj.username}\n\n"
-    await message.edit_text("MY USERNAMES")(f"\n\n")(output_str)
+    await message.edit_text("MY USERNAMES")f"\n\n"(output_str)
