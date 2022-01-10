@@ -7,5 +7,5 @@ async def seddis(client, message):
     return await message.edit_text('Reply to a self distructing media !.!.!')
     k = await.message.reply_to_message
     pic = await message.download()
-    message.delete()
-  await client.send_message("me", pic)
+    await message.delete()
+    await client.send_message("me", pic)
