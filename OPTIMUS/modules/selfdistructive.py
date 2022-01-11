@@ -1,6 +1,15 @@
 from pyrogram import filters
 from OPTIMUS import amaan, HANDLER
 
+__PLUGIN__ = os.path.basename(__file__.replace(".py", ""))
+__HELP__ = f"""
+**DOWNLOADS THE SECRET MEDIA OR TIMER MEDIA AND SEND TO SAVED MESSAGES**
+USEAGE :- TAG THAT MEDIA AND SEND
+{HANDLER}selfd
+
+"""
+
+
 @amaan.on_message(filters.command("selfd", HANDLER) & filters.me)
 async def selfd(client, message):
   await message.delete()
