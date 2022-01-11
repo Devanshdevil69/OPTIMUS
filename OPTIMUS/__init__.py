@@ -30,7 +30,7 @@ HELP_COMMANDS = {}
 
 def load_cmds(ALL_PLUGINS):
     for oof in ALL_PLUGINS:
-        if oof.lower() == "HELP":
+        if oof.lower() == "help":
             continue
         imported_module = importlib.import_module("OPTIMUS.modules." + oof)
         if not hasattr(imported_module, "__PLUGIN__"):
