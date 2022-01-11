@@ -4,7 +4,7 @@ from OPTIMUS import amaan, HANDLER
 __PLUGIN__ = os.path.basename(__file__.replace(".py", ""))
 __HELP__ = f"""
 **DOWNLOADS THE SECRET MEDIA OR TIMER MEDIA AND SEND TO SAVED MESSAGES**
-USEAGE :- TAG THAT MEDIA AND SEND
+USAGE :- TAG THAT MEDIA AND SEND
 {HANDLER}selfd
 
 """
