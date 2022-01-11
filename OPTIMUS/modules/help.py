@@ -5,10 +5,11 @@ from OPTIMUS.modules import ALL_PLUGINS
 from OPTIMUS import HELP_COMMANDS
 
 HELP_DEFAULT = f"""
-To get help for any command, just type `{HANDLER}help` plugin_name
-'plugin_name' should be the name of a proper plugin!
+To get help for any command, just type `{HANDLER}help` plugin name
+'PLUGiN NAME' should be the name of a proper plugin!
+
 **Get a list of all Plugins using:**
-`{HANDLER}plugins`.
+`{HANDLER}plugins`
 """
 
 
