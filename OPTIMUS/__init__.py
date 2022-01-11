@@ -3,7 +3,7 @@ import os
 from pyrogram import Client
 from datetime import datetime
 #from plugins import *
-
+import logging
 
 API_ID = int(os.environ["API_ID"])
 API_HASH = os.environ["API_HASH"]
@@ -11,6 +11,12 @@ SESSION = os.environ["SESSION_STRING"]
 
 HANDLER = os.environ["HANDLER"]
 
+# the logging things
+
+logging.basicConfig(
+    level=logging.INFO, format="%(asctime)s - [OPTIMUS] - %(levelname)s - %(message)s"
+)
+logging.getLogger("pyrogram").setLevel(logging.WARNING)
 
 # client
 
