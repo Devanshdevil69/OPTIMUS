@@ -3,8 +3,7 @@ from datetime import datetime
 from pyrogram import filters
 from OPTIMUS import amaan, HANDLER
 
-
-__MODULE__ = "Purges"
+__PLUGIN__ = os.path.basename(__file__.replace(".py", ""))
 __HELP__ = """
 THIS FEATURE IS DISABLE DUE BUG ON DELETE ALL MESSAGE
 Purge many messages in less than one seconds, you need to became admin to do this.
