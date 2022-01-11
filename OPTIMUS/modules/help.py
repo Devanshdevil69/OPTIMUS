@@ -33,9 +33,9 @@ async def help_me(client, message):
     if len(message.command) == 1:
         await message.edit_text(HELP_DEFAULT)
     elif len(message.command) == 2:
-        module_name = message.text.split(None, 1)[1]
+        mo_name = message.text.split(None, 1)[1]
         try:
-            HELP = f"**Help for __{module_name}__**\n\n" + HELP_COMMANDS[module_name]
+            HELP = f"**Help for __{mo_name}__**\n\n" + HELP_COMMANDS[mo_name]
             await message.reply_text(HELP, parse_mode="md", disable_web_page_preview=True)
             await message.delete()
         except Exception as ef:
