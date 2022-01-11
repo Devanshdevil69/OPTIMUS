@@ -3,6 +3,8 @@ import os
 from pyrogram import Client
 from datetime import datetime
 #from plugins import *
+from OPTIMUS.modules import *
+
 
 API_ID = int(os.environ["API_ID"])
 API_HASH = os.environ["API_HASH"]
