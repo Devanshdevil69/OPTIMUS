@@ -1,6 +1,7 @@
 from OPTIMUS import amaan, HANDLER
 from pyrogram import filters
 import html
+import os
 
 __PLUGIN__ = os.path.basename(__file__.replace(".py", ""))
 __HELP__ = f"""
