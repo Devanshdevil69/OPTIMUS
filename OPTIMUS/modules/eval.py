@@ -7,7 +7,13 @@ from io import StringIO
 from OPTIMUS import amaan, HANDLER
 from pyrogram import filters
 
+__PLUGIN__ = os.path.basename(__file__.replace(".py", ""))
+__HELP__ = f"""
+**EVAL & SH**
+• {HANDLER}eval
+• {HANDLER}sh
 
+"""
 
 
 async def aexec(code, client, message):
