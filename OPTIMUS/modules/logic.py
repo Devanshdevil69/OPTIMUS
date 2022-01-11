@@ -11,7 +11,7 @@ async def logic(client, message):
     await message.edit_text("Typing...")
     await asyncio.sleep(1)
 
-    x=(random.randrange(1,96))
+    x=(random.randrange(1,97))
 
     if x==1:
         await message.edit_text("`\"Underwater bubbles and raindrops are total opposites of each other.\"`")
@@ -300,7 +300,10 @@ async def logic(client, message):
 
     if x==96:
         await message.edit_text("`\"Bermuda Triangle might be the exit portal of this simulation.\"`")
-    
+
     if x==97:
+        await message.edit_text("`\"NeveR Interrupt KinGs eLse Ready FoR Destruction.\"`")
+    
+    if x==98:
         await message.edit_text("`\"If we put solar panels above parking lots, then our cars wouldn't get hot and we would have a lot of clean energy.\"`")
 
