@@ -5,6 +5,14 @@ from datetime import datetime
 import asyncio
 import time
 
+__PLUGIN__ = os.path.basename(__file__.replace(".py", ""))
+__HELP__ = """
+**ALIVE AND PING**
+USAGE :-
+• {HANDLER}alive
+
+• {HANDLER}ping
+"""
 #ping
 
 @amaan.on_message(filters.command("ping", HANDLER) & filters.me)
