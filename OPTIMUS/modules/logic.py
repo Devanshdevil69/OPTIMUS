@@ -6,11 +6,6 @@ from OPTIMUS import amaan, HANDLER
 
 @amaan.on_message(filters.command("logic", HANDLER) & filters.me)
 async def logic(client, message):
-
-    if event.fwd_from:
-
-        return
-
     await message.edit_text("Typing...")
     await asyncio.sleep(1)
 
