@@ -3,7 +3,13 @@ from pyrogram.types import ChatPermissions
 from pyrogram.raw.functions.channels import GetAdminedPublicChannels
 from OPTIMUS import amaan, HANDLER
 import asyncio
+import os 
 
+__PLUGIN__ = os.path.basename(__file__.replace(".py", ""))
+__HELP__ = f"""
+**GET YOUR USERNAMES**
+USAGE :- {HANDLER}listmyusernames
+"""
 
 
 @amaan.on_message(filters.command("listmyusernames", HANDLER) & filters.me)
