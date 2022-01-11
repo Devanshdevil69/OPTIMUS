@@ -8,7 +8,7 @@ HELP_DEFAULT = f"""
 To get help for any command, just type `{HANDLER}help` plugin_name
 'plugin_name' should be the name of a proper plugin!
 **Get a list of all Plugins using:**
-`{PREFIX}plugins`.
+`{HANDLER}plugins`.
 """
 
 
