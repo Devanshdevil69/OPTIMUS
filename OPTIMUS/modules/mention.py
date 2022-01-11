@@ -2,6 +2,12 @@ from OPTIMUS import amaan, HANDLER
 from pyrogram import filters
 import html
 
+__PLUGIN__ = os.path.basename(__file__.replace(".py", ""))
+__HELP__ = """
+**UseR Mention AnD TaGALL**
+• {HANDLER}mention <username without @> <custom text>
+• {HANDLER}tagall 
+"""
 # mention user 
 
 @amaan.on_message(filters.command("mention", HANDLER) & filters.me)
