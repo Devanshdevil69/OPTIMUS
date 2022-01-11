@@ -4,7 +4,7 @@ from pyrogram import filters
 from OPTIMUS import amaan, HANDLER
 
 __PLUGIN__ = os.path.basename(__file__.replace(".py", ""))
-__HELP__ = """
+__HELP__ = f"""
 THIS FEATURE IS DISABLE DUE BUG ON DELETE ALL MESSAGE
 Purge many messages in less than one seconds, you need to became admin to do this.
 Except for purgeme feature
@@ -26,11 +26,11 @@ Read this before take an action!
 -> This is not a joke, not funny if you're nuked a group by this feature and blame developer for made this powerful weapon!
 Ok look like you're understand what happened if you playing with this powerful weapon.
 ──「 **Purge** 」──
--> `purge`
+-> `{HANDLER}purge`
 Purge from bellow to that replyed message, you need to became admins to do this, else it only purge your message only!
 Give a number **without reply** to purge for x messages.
 ──「 **Purge My Messages** 」──
--> `purgeme`
+-> `{HANDLER}purgeme`
 Purge your messages only, no need admin permission.
 """
 
