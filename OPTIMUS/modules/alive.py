@@ -4,6 +4,7 @@ from sys import version_info
 from datetime import datetime
 import asyncio
 import time
+import os
 
 __PLUGIN__ = os.path.basename(__file__.replace(".py", ""))
 __HELP__ = """
