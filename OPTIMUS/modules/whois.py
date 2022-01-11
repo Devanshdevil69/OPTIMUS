@@ -8,6 +8,8 @@ from pyrogram.errors import PeerIdInvalid
 from OPTIMUS import amaan, HANDLER
 
 
+__HELP__ = """ Tag any message and send {HANDLER}info or {HANDLER}whois to extract user's data. """
+
 
 
 def ReplyCheck(message):
