@@ -4,7 +4,7 @@ from telegraph import upload_file
 from pyrogram import filters
 from OPTIMUS import amaan, HANDLER
 
-__MODULE__ = "Telegra.ph"
+__PLUGIN__ = os.path.basename(__file__.replace(".py", ""))
 __HELP__ = """
 Paste Media Documents on Telegra.ph
 ──「 **Telegra.ph** 」──
