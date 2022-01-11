@@ -1,8 +1,15 @@
+import os
 import random
 from random import randint, choice
 import asyncio
 from pyrogram import filters
 from OPTIMUS import amaan, HANDLER
+
+__PLUGIN__ = os.path.basename(__file__.replace(".py", ""))
+__HELP__ = f"""
+**SENDS A LOGIC**
+• {HANDLER}logic 
+"""
 
 # LoGiC
 
