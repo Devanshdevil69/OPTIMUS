@@ -2,6 +2,12 @@ from OPTIMUS import amaan, HANDLER
 from pyrogram import filters
 import os
 
+__PLUGIN__ = os.path.basename(__file__.replace(".py", ""))
+__HELP__ = """
+**OTHER ADMIN FUNCTIONS**
+• {HANDLER}ls
+ 
+"""
 
 @amaan.on_message(filters.command("ls", HANDLER) & filters.me)
 async def ls(client, message):
