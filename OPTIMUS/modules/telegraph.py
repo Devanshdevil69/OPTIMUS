@@ -5,10 +5,10 @@ from pyrogram import filters
 from OPTIMUS import amaan, HANDLER
 
 __PLUGIN__ = os.path.basename(__file__.replace(".py", ""))
-__HELP__ = """
+__HELP__ = f"""
 Paste Media Documents on Telegra.ph
 ──「 **Telegra.ph** 」──
--> `telegraph (reply to a media)`
+-> '{HANDLER}telegraph' (reply to a media)
 Reply to Media as args to upload it to telegraph.
 - Supported Media Types (.jpg, .jpeg, .png, .gif, .mp4)
 """
