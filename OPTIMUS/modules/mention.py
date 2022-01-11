@@ -3,7 +3,7 @@ from pyrogram import filters
 import html
 
 __PLUGIN__ = os.path.basename(__file__.replace(".py", ""))
-__HELP__ = """
+__HELP__ = f"""
 **UseR Mention AnD TaGALL**
 • {HANDLER}mention <username without @> <custom text>
 • {HANDLER}tagall 
