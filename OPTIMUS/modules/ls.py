@@ -3,7 +3,7 @@ from pyrogram import filters
 import os
 
 __PLUGIN__ = os.path.basename(__file__.replace(".py", ""))
-__HELP__ = """
+__HELP__ = f"""
 **OTHER ADMIN FUNCTIONS**
 • {HANDLER}ls
  
