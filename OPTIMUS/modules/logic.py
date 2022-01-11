@@ -1,7 +1,7 @@
 import random
 from random import randint, choice
 import asyncio
-from program import filters
+from pyrogram import filters
 from OPTIMUS import amaan, HANDLER
 
 # LoGiC
