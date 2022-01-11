@@ -2,6 +2,13 @@ import os
 from OPTIMUS import amaan, HANDLER
 from pyrogram import filters
 
+__PLUGIN__ = os.path.basename(__file__.replace(".py", ""))
+__HELP__ = f"""
+**GET IDs**
+• {HANDLER}id -tag any user or media
+
+"""
+
 @amaan.on_message(filters.command("id", HANDLER) & filters.me)
 async def get_id(client, message):
     file_id = None
