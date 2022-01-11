@@ -1,6 +1,4 @@
-
-from OPTIMUS import __PLUGIN__
-import lib
+import importlib
 import os
 from pyrogram import Client
 from datetime import datetime
@@ -44,6 +42,6 @@ def load_cmds(ALL_PLUGINS):
                 "Can't have two modules with the same name! Please change one"
             )
 
-        if hasattr(imported_module, "__help__") and imported_module.__help__:
-            HELP_COMMANDS[imported_module.__PLUGIN__.lower()] = imported_module.__help__
+        if hasattr(imported_module, "__HELP__") and imported_module.__HELP__:
+            HELP_COMMANDS[imported_module.__PLUGIN__.lower()] = imported_module.__HELP__
     return "Done Loading Plugins and Commands!"
