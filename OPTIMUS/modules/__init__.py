@@ -6,9 +6,9 @@ from OPTIMUS import amaan
 from os.path import dirname, basename, isfile, join
 import glob
 
-def __list_all_plugins():
-
     # This generates a list of plugins in this folder for the * in __main__ to work.
+
+def __list_all_plugins():
     mod_paths = glob.glob(dirname(__file__) + "/*.py")
     all_plugins = [
         basename(f)[:-3]
