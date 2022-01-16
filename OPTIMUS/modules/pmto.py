@@ -15,7 +15,7 @@ __HELP__ = f"""
 
 @amaan.on_message(filters.command("pmto", HANDLER) & filters.me)
 async def pmto(client, message):
-    a = client.pattern_match.group(1)
+    a = amaan.pattern_match.group(1)
     b = a.split(" ")
     chat_id = b[0]
     try:
