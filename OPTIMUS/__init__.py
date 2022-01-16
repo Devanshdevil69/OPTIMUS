@@ -8,7 +8,7 @@ import logging
 API_ID = int(os.environ["API_ID"])
 API_HASH = os.environ["API_HASH"]
 SESSION = os.environ["SESSION_STRING"]
-
+LOGGER = logging.getLogger(__name__)
 HANDLER = os.environ["HANDLER"]
 
 # the logging things
