@@ -1,6 +1,6 @@
 
 
-from OPTIMUS import amaan
+from OPTIMUS import amaan, LOGGER
 
 
 from os.path import dirname, basename, isfile, join
