@@ -4,6 +4,7 @@
 
 import os
 from pyrogram import filters
+from pyrogram.types import Chat
 from OPTIMUS import amaan, HANDLER
 
 __PLUGIN__ = os.path.basename(__file__.replace(".py", ""))
@@ -15,7 +16,7 @@ __HELP__ = f"""
 
 @amaan.on_message(filters.command("pmto", HANDLER) & filters.me)
 async def pmto(client, message):
-    a = amaan.pattern_match.group(1)
+    a = message.pattern_match.group(1)
     b = a.split(" ")
     chat_id = b[0]
     try:
