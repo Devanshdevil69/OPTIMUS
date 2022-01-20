@@ -17,6 +17,9 @@ logging.basicConfig(
     level=logging.INFO, format="%(asctime)s - [OPTIMUS] - %(levelname)s - %(message)s"
 )
 logging.getLogger("pyrogram").setLevel(logging.WARNING)
+log = logging.getLogger("[OPTIMUS]")
+log.info("OPTIMUS Userbot | Powered By AMAAN THE GAMER KING | Licensed under GPLv3.")
+log.info(" OPTIMUS is Started TRY .help or .alive ")
 
 # client
 
