@@ -3,12 +3,11 @@
 from OPTIMUS import amaan, LOGGER
 
 
-from os.path import dirname, basename, isfile, join
-import glob
+def __list_all_plugins():
+    from os.path import dirname, basename, isfile
+    import glob
 
     # This generates a list of plugins in this folder for the * in __main__ to work.
-
-def __list_all_plugins():
     mod_paths = glob.glob(dirname(__file__) + "/*.py")
     all_plugins = [
         basename(f)[:-3]
