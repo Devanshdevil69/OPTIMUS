@@ -19,7 +19,7 @@ async def list_plugins(client, message):
     mods = ""
     mod_num = 0
     # Some Variables
-    modules = list(HELP_COMMANDS.keys())
+    modules = list(__PLUGIN__.keys())
     for plug in modules:
         mods += f"`{plug}`\n"
         mod_num += 1
