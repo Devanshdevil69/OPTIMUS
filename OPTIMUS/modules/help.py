@@ -1,7 +1,7 @@
 import os
 from pyrogram import filters
 from OPTIMUS import amaan, HANDLER
-from OPTIMUS.modules import ALL_PLUGINS
+from OPTIMUS.modules import ALL_PLUGINS, __PLUGINS__
 from OPTIMUS import HELP_COMMANDS
 
 HELP_DEFAULT = f"""
