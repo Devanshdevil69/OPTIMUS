@@ -58,9 +58,9 @@ def load_cmds(ALL_PLUGINS):
 """
 # another help
 
-for all_module in ALL_PLUGINS:
+for all_plugins in ALL_PLUGINS:
             imported_module = importlib.import_module(
-                "OPTIMUS.modukes." + all_module
+                "OPTIMUS.modukes." + all_plugins
             )
             if (
                 hasattr(imported_module, "__PLUGIN__")
