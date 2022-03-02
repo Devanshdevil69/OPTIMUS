@@ -36,7 +36,7 @@ StartTime = datetime.now()
 # for help command
 
 HELP_COMMANDS = {}
-
+"""
 def load_cmds(ALL_PLUGINS):
     for oof in ALL_PLUGINS:
         if oof.lower() == "help":
@@ -55,3 +55,22 @@ def load_cmds(ALL_PLUGINS):
         if hasattr(imported_module, "__HELP__") and imported_module.__HELP__:
             HELP_COMMANDS[imported_module.__PLUGIN__.lower()] = imported_module.__HELP__
     return "Done Loading Plugins and Commands!"
+"""
+# another help
+
+for all_module in ALL_PLUGINS:
+            imported_module = importlib.import_module(
+                "OPTIMUS.modukes." + all_module
+            )
+            if (
+                hasattr(imported_module, "__PLUGIN__")
+                and imported_module.__PLUGIN__
+            ):
+                imported_module.__PLUGIN__ = imported_module.__PLUGIN__
+                if (
+                    hasattr(imported_module, "__HELP__")
+                    and imported_module.__HELP__
+                ):
+                    HELP_COMMANDS[
+                        imported_module.__PLUGIN__.lower()
+                    ] = imported_module
