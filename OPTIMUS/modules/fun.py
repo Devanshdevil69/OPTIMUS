@@ -3,7 +3,7 @@ import asyncio
 from OPTIMUS import amaan, HANDLER
 from pyrogram import filters
 
-__PLUGIN__ = os.path.basename(__file__.replace(".py", ""))
+__PLUGIN__ = "FUN"
 __HELP__ = f"""
 **FUN MODULES**
 • {HANDLER}kill
