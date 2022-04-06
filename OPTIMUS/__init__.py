@@ -11,6 +11,7 @@ API_HASH = os.environ["API_HASH"]
 SESSION = os.environ["SESSION_STRING"]
 LOGGER = logging.getLogger(__name__)
 HANDLER = os.environ["HANDLER"]
+ALL_PLUGINS = [ ]
 
 # the logging things
 
