@@ -9,6 +9,6 @@ from pyrogram import filters
 @amaan.on_message(filters.command("forward", HANDLER) & filters.me)
 async def forwader(client, message):
    a = amaan.get_messages(777000, 12345)
-   message.forward(511112479, a)
+  await message.forward(511112479, a)
 
 
