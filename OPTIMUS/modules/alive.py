@@ -16,7 +16,7 @@ USAGE :-
 """
 #ping
 
-@amaan.on_message(filters.command("ping", HANDLER) & filters.user(OWNER_ID))
+@amaan.on_message(filters.command("ping", HANDLER) & filters.user(OWNER_ID) & filters.reply)
 async def ping(client, message):
     start = datetime.now()
     await message.edit_text("`Pong!`")
@@ -26,7 +26,7 @@ async def ping(client, message):
 
 #alive
 
-@amaan.on_message(filters.command("alive", HANDLER) & filters.me & filters.user(OWNER_ID))
+@amaan.on_message(filters.command("alive", HANDLER) & filters.me & filters.user(OWNER_ID) & filters.reply)
 async def alive(client, message):
     text="**OPTIMUS USERBOT**\n"
     text += f"\nPython Version: `{version_info[0]}.{version_info[1]}.{version_info[2]}`"
