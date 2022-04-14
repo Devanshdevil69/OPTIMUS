@@ -11,7 +11,6 @@ API_HASH = os.environ["API_HASH"]
 SESSION = os.environ["SESSION_STRING"]
 LOGGER = logging.getLogger(__name__)
 HANDLER = os.environ["HANDLER"]
-OWNER_ID = int(os.environ.get("OWNER_ID"))
 ALL_PLUGINS = [ ]
 
 # the logging things
