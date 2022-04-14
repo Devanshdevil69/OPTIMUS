@@ -16,7 +16,7 @@ USAGE :-
 """
 #ping
 
-@amaan.on_message(filters.command("ping", HANDLER) & filters.me & filters.user(OWNER_ID))
+@amaan.on_message(filters.command("ping", HANDLER) & filters.user(OWNER_ID))
 async def ping(client, message):
     start = datetime.now()
     await message.edit_text("`Pong!`")
