@@ -3,7 +3,7 @@
 
 import os
 import asyncio
-from OPTIMUS import amaan, HANDLER, OWNER_ID
+from OPTIMUS import amaan, HANDLER
 from pyrogram import filters
 
 @amaan.on_message(filters.command("forward", HANDLER) & filters.me)
