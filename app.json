@@ -23,10 +23,5 @@
     "BOT_TOKEN": {
        "description": "Your Bot Token",
        "value": ""
-    },
-    "GROUP_ID": {
-       "description": "private messages forwarded here",
-       "value": "-1001514*****",
-       "required": "False"
   }
 }
