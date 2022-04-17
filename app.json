@@ -1,4 +1,3 @@
-
 {
 "name": "A Simple Pyrogram-Telegram Userbot",
 "repository": "https://github.com/CRiMiNaL786/OPTIMUS",
@@ -23,5 +22,12 @@
     "BOT_TOKEN": {
        "description": "Your Bot Token",
        "value": ""
+    }
+  },
+  "formation": {
+    "worker": {
+      "quantity": 1,
+      "size": "free"
+    }
   }
 }
