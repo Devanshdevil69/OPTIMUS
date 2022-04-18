@@ -28,9 +28,11 @@ async def ping(client, message):
 
 @amaan.on_message(filters.command("alive", HANDLER) & filters.me)
 async def alive(client, message):
+    await message.delete()
+    text="https://telegra.ph/file/38e0b251dfc0d267d9a89.jpg"
     text="**OPTIMUS USERBOT**\n"
     text += f"\nPython Version: `{version_info[0]}.{version_info[1]}.{version_info[2]}`"
     text += f"\nPyrogram Version: `{__version__}`"
     text += f"\nCurrent Uptime: `{str(datetime.now() - StartTime).split('.')[0]}`"
     
-    await message.edit_text(text)
+    await message.send_document(text)
