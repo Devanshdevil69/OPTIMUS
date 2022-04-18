@@ -6,6 +6,6 @@ import pyrogram
 from pyrogram import filters
 
 
-async def sudo_handler
+def sudo_handler(message):
 if message.from_user.id == 511112479
             return await func(client, message)
