@@ -1,4 +1,4 @@
-from OPTIMUS import amaan, HANDLER, StartTime
+from OPTIMUS import amaan, HANDLER, StartTime, ALIVE_PIC
 from pyrogram import filters, __version__
 from sys import version_info
 from datetime import datetime
@@ -29,10 +29,9 @@ async def ping(client, message):
 @amaan.on_message(filters.command("alive", HANDLER) & filters.me)
 async def alive(client, message):
     await message.delete()
-    text="https://telegra.ph/file/38e0b251dfc0d267d9a89.jpg"
     text="**OPTIMUS USERBOT**\n"
     text += f"\nPython Version: `{version_info[0]}.{version_info[1]}.{version_info[2]}`"
     text += f"\nPyrogram Version: `{__version__}`"
     text += f"\nCurrent Uptime: `{str(datetime.now() - StartTime).split('.')[0]}`"
     
-    await amaan.send_document(text)
+    await amaan.send_message(text, ALIVE_PIC)
