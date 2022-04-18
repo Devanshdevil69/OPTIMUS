@@ -2,7 +2,6 @@
 # sasta nasha krke bnaya
 
 import asyncio
-import pyrogram
 from pyrogram import filters
 
 
