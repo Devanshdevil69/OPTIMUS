@@ -19,7 +19,7 @@
       "value": "0",
       "required": "True"
     },
-    "BOT_TOKEN": {
+    "HANDLER": {
        "description": "Your Bot Token",
        "value": ""
     }
