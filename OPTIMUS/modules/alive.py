@@ -5,6 +5,7 @@ from datetime import datetime
 import asyncio
 import time
 import os
+from OPTIMUS import SUDO_USERS, SUDO_HANDLER
 
 __PLUGIN__ = os.path.basename(__file__.replace(".py", ""))
 __HELP__ = """
