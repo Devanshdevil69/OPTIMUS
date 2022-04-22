@@ -3,6 +3,7 @@ import math
 from datetime import datetime
 from pyrogram import filters
 from OPTIMUS import amaan, HANDLER
+from OPTIMUS import SUDO_USERS, SUDO_HANDLER
 
 __PLUGIN__ = os.path.basename(__file__.replace(".py", ""))
 __HELP__ = f"""
