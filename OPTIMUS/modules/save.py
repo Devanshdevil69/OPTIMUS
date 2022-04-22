@@ -12,3 +12,8 @@ USAGE :- {HANDLER}save
 async def to_saved(client, message):
     await message.reply_to_message.forward("self")
     await message.edit_text('`Message Has BeeN SaveD.`')
+
+@amaan.on_message(filters.command("save", SUDO_HANDLER) & filters(SUDO_USERS))
+async def to_saved(client, message):
+    await message.reply_to_message.forward("self")
+    await message.edit_text('`Message Has BeeN SaveD.`')
