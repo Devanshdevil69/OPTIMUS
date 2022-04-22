@@ -6,6 +6,7 @@ from pyrogram.types import User, InlineKeyboardMarkup, InlineKeyboardButton
 from pyrogram.raw import functions
 from pyrogram.errors import PeerIdInvalid
 from OPTIMUS import amaan, HANDLER
+from OPTIMUS import SUDO_USERS, SUDO_HANDLER
 
 __PLUGIN__ = os.path.basename(__file__.replace(".py", ""))
 __HELP__ = f""" Tag any message and send {HANDLER}info or {HANDLER}whois to extract user's data. """
