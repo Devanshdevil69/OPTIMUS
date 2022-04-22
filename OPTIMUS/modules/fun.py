@@ -1,7 +1,6 @@
 import os
 import asyncio
 from OPTIMUS import amaan, HANDLER
-from OPTIMUS.helpers.sudo import sudo_handler
 from pyrogram import filters
 from OPTIMUS import SUDO_USERS, SUDO_HANDLER
 
@@ -15,7 +14,6 @@ __HELP__ = f"""
 # KiLL
 
 @amaan.on_message(filters.command("kill", HANDLER) & filters.me)
-@sudo_handler
 async def kill(client, message):
    await message.edit_text("UseR KilleD Sucessfully  ▀̿ ̿Ĺ̯̿̿▀̿ ̿")
 
