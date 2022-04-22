@@ -108,3 +108,68 @@ async def whois(client, message):
             else None,
         )
         os.remove(dls)
+
+@amaan.on_message(filters.command(["whois", "info"], SUDO_HANDLER) & filters(SUDO_USERS))
+async def whois(client, message):
+    await message.edit_text("`Extracting User Data...`")
+    cmd = message.command
+    if not message.reply_to_message and len(cmd) == 1:
+        get_user = message.from_user.id
+    elif len(cmd) == 1:
+        get_user = message.reply_to_message.from_user.id
+    elif len(cmd) > 1:
+        get_user = cmd[1]
+        try:
+            get_user = int(cmd[1])
+        except ValueError:
+            pass
+    try:
+        user = await client.get_users(get_user)
+    except PeerIdInvalid:
+        await message.reply("I don't know that User.")
+        return
+    common = await client.get_common_chats(user.id)
+    pfp = await client.get_profile_photos(user.id)
+    if not pfp:
+        await message.edit_text(
+            infotext.format(
+                full_name=FullName(user),
+                user_id=user.id,
+                first_name=user.first_name,
+                last_name=user.last_name or "",
+                username=user.username or "",
+                dc_id=user.dc_id or "1",
+                status=user.status or "None",
+                scam=user.is_scam,
+                bot=user.is_bot,
+                verifies=user.is_verified,
+                contact=user.is_contact,
+                common=len(common),
+            ),
+            disable_web_page_preview=True,
+        )
+    else:
+        dls = await client.download_media(pfp[0]["file_id"], file_name=f"{user.id}.png")
+        await message.delete()
+        await client.send_document(
+            message.chat.id,
+            dls,
+            caption=infotext.format(
+                full_name=FullName(user),
+                user_id=user.id,
+                first_name=user.first_name,
+                last_name=user.last_name or "",
+                username=user.username or "",
+                dc_id=user.dc_id or "1",
+                status=user.status or "None",
+                scam=user.is_scam,
+                bot=user.is_bot,
+                verifies=user.is_verified,
+                contact=user.is_contact,
+                common=len(common),
+            ),
+            reply_to_message_id=message.reply_to_message.message_id
+            if message.reply_to_message
+            else None,
+        )
+        os.remove(dls)
