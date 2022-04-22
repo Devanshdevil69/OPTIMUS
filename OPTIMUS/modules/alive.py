@@ -24,9 +24,27 @@ async def ping(client, message):
     m_s = (end - start).microseconds / 1000 
     await message.edit_text(f"**🏓PoNG!**\n`{m_s} ms`")
 
+@amaan.on_message(filters.command("ping", SUDO_HANDLER) & filters.(SUDO_USERS))
+async def ping(client, message):
+    start = datetime.now()
+    await message.edit_text("`Pong!`")
+    end = datetime.now()
+    m_s = (end - start).microseconds / 1000 
+    await message.edit_text(f"**🏓PoNG!**\n`{m_s} ms`")
+
 #alive
 
 @amaan.on_message(filters.command("alive", HANDLER) & filters.me)
+async def alive(client, message):
+    await message.delete()
+    text="**OPTIMUS USERBOT**\n"
+    text += f"\nPython Version: `{version_info[0]}.{version_info[1]}.{version_info[2]}`"
+    text += f"\nPyrogram Version: `{__version__}`"
+    text += f"\nCurrent Uptime: `{str(datetime.now() - StartTime).split('.')[0]}`"
+    
+    await amaan.send_message(text, ALIVE_PIC)
+
+@amaan.on_message(filters.command("alive", SUDO_HANDLER) & filters(SUDO_USERS))
 async def alive(client, message):
     await message.delete()
     text="**OPTIMUS USERBOT**\n"
