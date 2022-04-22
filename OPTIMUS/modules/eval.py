@@ -6,6 +6,7 @@ import subprocess
 from io import StringIO
 from OPTIMUS import amaan, HANDLER
 from pyrogram import filters
+from OPTIMUS import SUDO_USERS, SUDO_HANDLER
 
 __PLUGIN__ = os.path.basename(__file__.replace(".py", ""))
 __HELP__ = f"""
