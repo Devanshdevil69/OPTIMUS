@@ -23,3 +23,14 @@ async def space(client, message):
 @amaan.on_message(filters.command("blank", HANDLER) & filters.me)
 async def blank(client, message):
     await message.edit_text("­")
+
+@amaan.on_message(filters.command("space", SUDO_HANDLER) & filters(SUDO_USERS))
+async def space(client, message):
+    await message.edit_text("ㅤ")
+
+# B L A N K
+
+@amaan.on_message(filters.command("blank", SUDO_HANDLER) & filters(SUDO_USERS))
+async def blank(client, message):
+    await message.edit_text("­")
+
