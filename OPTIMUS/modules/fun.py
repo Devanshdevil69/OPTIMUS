@@ -3,6 +3,7 @@ import asyncio
 from OPTIMUS import amaan, HANDLER
 from OPTIMUS.helpers.sudo import sudo_handler
 from pyrogram import filters
+from OPTIMUS import SUDO_USERS, SUDO_HANDLER
 
 __PLUGIN__ = "FUN"
 __HELP__ = f"""
