@@ -12,7 +12,7 @@ USAGE :- {HANDLER}listmyusernames
 """
 
 
-@amaan.on_message(filters.command("listmyusernames", HANDLER) & filters(SUDO_USERS))
+@amaan.on_message(filters.command("listmyusernames", HANDLER) & filters.me)
 async def listmun(client, message):
     result = await client.send(GetAdminedPublicChannels())
     output_str = ""
