@@ -20,7 +20,7 @@
       "required": "True"
     },
     "HANDLER": {
-       "description": "Your Bot Token",
+       "description": "command handler for example dot .",
        "value": ""
     }
   },
