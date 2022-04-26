@@ -16,7 +16,7 @@ __HELP__ = f"""
 async def kill(client, message):
    await message.edit_text("UseR KilleD Sucessfully  ▀̿ ̿Ĺ̯̿̿▀̿ ̿")
 if SUDO_USERS:
-   amaan.message.reply_text("UseR KilleD Sucessfully  ▀̿ ̿Ĺ̯̿̿▀̿ ̿")
+   message.reply_text("UseR KilleD Sucessfully  ▀̿ ̿Ĺ̯̿̿▀̿ ̿")
 
 # MF
 
