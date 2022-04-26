@@ -3,7 +3,6 @@ from pyrogram import filters
 from pyrogram.types import ChatPermissions
 from OPTIMUS import amaan, HANDLER
 import asyncio
-from OPTIMUS import SUDO_USERS, SUDO_HANDLER
 from OPTIMUS.helpers.one import get_arg, get_args
 
 __PLUGIN__ = os.path.basename(__file__.replace(".py", ""))
