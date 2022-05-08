@@ -5,6 +5,7 @@ from datetime import datetime
 #from plugins import *
 import logging
 from inspect import getfullargspec
+from pyrogram.types import Message
 
 API_ID = int(os.environ["API_ID"])
 API_HASH = os.environ["API_HASH"]
