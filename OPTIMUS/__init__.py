@@ -4,7 +4,7 @@ from pyrogram import Client
 from datetime import datetime
 #from plugins import *
 import logging
-
+from inspect import getfullargspec
 
 API_ID = int(os.environ["API_ID"])
 API_HASH = os.environ["API_HASH"]
@@ -78,3 +78,11 @@ for all_plugins in ALL_PLUGINS:
                     HELP_COMMANDS[
                         imported_module.__PLUGIN__.lower()
                     ] = imported_module
+
+                    
+# edit or reply
+
+async def edit_or_reply(msg: Message, **kwargs):
+    func = msg.edit_text if msg.from_user.is_self else msg.reply
+    spec = getfullargspec(func.__wrapped__).args
+    await func(**{k: v for k, v in kwargs.items() if k in spec})                    
