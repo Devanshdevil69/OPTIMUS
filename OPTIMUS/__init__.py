@@ -12,6 +12,7 @@ API_HASH = os.environ["API_HASH"]
 SESSION = os.environ["SESSION_STRING"]
 LOGGER = logging.getLogger(__name__)
 HANDLER = os.environ["HANDLER"]
+SUDO_USERS = os.environ["SUDO_USERS"]
 SUDO_USERS = [int(i) for i in SUDO_USERS.split()]
 ALIVE_PIC = "https://telegra.ph/file/38e0b251dfc0d267d9a89.jpg"
 ALL_PLUGINS = [ ]
