@@ -14,7 +14,7 @@ __HELP__ = f"""
 
 @amaan.on_message(filters.command("kill", HANDLER) & filters.me & filters.user(SUDO_USERS))
 async def kill(client, message):
-   await edit_or_reply("UseR KilleD Sucessfully  ▀̿ ̿Ĺ̯̿̿▀̿ ̿")
+   await message.reply_text("UseR KilleD Sucessfully  ▀̿ ̿Ĺ̯̿̿▀̿ ̿")
 
 # MF
 
