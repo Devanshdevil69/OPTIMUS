@@ -1,7 +1,7 @@
 from pyrogram import filters
 from pyrogram.types import ChatPermissions
 from pyrogram.raw.functions.channels import GetAdminedPublicChannels
-from OPTIMUS import amaan, HANDLER
+from OPTIMUS import amaan, HANDLER, SUDO_USERS
 import asyncio
 import os 
 
@@ -13,6 +13,7 @@ USAGE :- {HANDLER}listmyusernames
 
 
 @amaan.on_message(filters.command("listmyusernames", HANDLER) & filters.me)
+@amaan.on_message(filters.command("listmyusernames", HANDLER) & filters.user(SUDO_USERS))
 async def listmun(client, message):
     result = await client.send(GetAdminedPublicChannels())
     output_str = ""
