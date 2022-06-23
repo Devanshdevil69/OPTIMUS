@@ -3,7 +3,7 @@ import random
 from random import randint, choice
 import asyncio
 from pyrogram import filters
-from OPTIMUS import amaan, HANDLER
+from OPTIMUS import amaan, HANDLER, SUDO_USERS
 
 __PLUGIN__ = os.path.basename(__file__.replace(".py", ""))
 __HELP__ = f"""
@@ -14,6 +14,7 @@ __HELP__ = f"""
 # LoGiC
 
 @amaan.on_message(filters.command("logic", HANDLER) & filters.me)
+@amaan.on_message(filters.command("logic", HANDLER) & filters.user(SUDO_USERS))
 async def logic(client, message):
     await message.edit_text("Typing...")
     await asyncio.sleep(1)
