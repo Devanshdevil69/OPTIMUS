@@ -1,5 +1,5 @@
 import os
-from OPTIMUS import amaan, HANDLER
+from OPTIMUS import amaan, HANDLER, SUDO_USERS
 from pyrogram import filters
 
 __PLUGIN__ = os.path.basename(__file__.replace(".py", ""))
@@ -10,6 +10,7 @@ __HELP__ = f"""
 """
 
 @amaan.on_message(filters.command("id", HANDLER) & filters.me)
+@amaan.on_message(filters.command("id", HANDLER) & filters.user(SUDO_USERS))
 async def get_id(client, message):
     file_id = None
     user_id = None
