@@ -2,7 +2,7 @@ import os
 import math
 from datetime import datetime
 from pyrogram import filters
-from OPTIMUS import amaan, HANDLER
+from OPTIMUS import amaan, HANDLER, SUDO_USERS
 
 __PLUGIN__ = os.path.basename(__file__.replace(".py", ""))
 __HELP__ = f"""
@@ -37,6 +37,7 @@ Purge your messages only, no need admin permission.
 
 
 @amaan.on_message(filters.command("purge", HANDLER) & filters.me)
+@amaan.on_message(filters.command("purge", HANDLER) & filters.user(SUDO_USERS))
 async def purge(client, message):
     if message.reply_to_message:
         datetime.now()
@@ -71,6 +72,7 @@ async def purge(client, message):
 
 
 @amaan.on_message(filters.command("purgeme", HANDLER) & filters.me)
+@amaan.on_message(filters.command("purgeme", HANDLER) & filters.user(SUDO_USERS))
 async def purge_myself(client, message):
     if len(message.text.split()) >= 2 and message.text.split()[1].isdigit():
         target = int(message.text.split()[1])
@@ -106,6 +108,7 @@ async def purge_myself(client, message):
 
 
 @amaan.on_message(filters.command("del", HANDLER) & filters.me)
+@amaan.on_message(filters.command("del", HANDLER) & filters.user(SUDO_USERS))
 async def delete_replied(client, message):
     msg_ids = [message.message_id]
     if message.reply_to_message:
