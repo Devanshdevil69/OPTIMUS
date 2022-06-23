@@ -5,7 +5,7 @@ from pyrogram import filters
 from pyrogram.types import User, InlineKeyboardMarkup, InlineKeyboardButton
 from pyrogram.raw import functions
 from pyrogram.errors import PeerIdInvalid
-from OPTIMUS import amaan, HANDLER
+from OPTIMUS import amaan, HANDLER, SUDO_USERS
 
 __PLUGIN__ = os.path.basename(__file__.replace(".py", ""))
 __HELP__ = f""" Tag any message and send {HANDLER}info or {HANDLER}whois to extract user's data. """
@@ -45,6 +45,7 @@ def FullName(user: User):
 
 
 @amaan.on_message(filters.command(["whois", "info"], HANDLER) & filters.me)
+@amaan.on_message(filters.command("whois", HANDLER) & filters.user(SUDO_USERS))
 async def whois(client, message):
     await message.edit_text("`Extracting User Data...`")
     cmd = message.command
