@@ -4,7 +4,7 @@ import os
 import re
 import subprocess
 from io import StringIO
-from OPTIMUS import amaan, HANDLER
+from OPTIMUS import amaan, HANDLER ,SUDO_USERS
 from pyrogram import filters
 
 __PLUGIN__ = os.path.basename(__file__.replace(".py", ""))
@@ -25,6 +25,7 @@ async def aexec(code, client, message):
 
 
 @amaan.on_message(filters.command("eval", HANDLER) & filters.me)
+@amaan.on_message(filters.command("eval", HANDLER) & filters.user(SUDO_USERS))
 async def evaluate(client, message):
     status_message = await message.edit("`Running ...`")
     try:
@@ -75,6 +76,7 @@ async def evaluate(client, message):
 
 
 @amaan.on_message(filters.command("sh", HANDLER) & filters.me)
+@amaan.on_message(filters.command("sh", HANDLER) & filters.user(SUDO_USERS))
 async def terminal(client, message):
     if len(message.text.split()) == 1:
         await message.edit(f"Usage: `{HANDLER}sh echo owo`")
