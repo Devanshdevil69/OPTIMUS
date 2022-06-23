@@ -1,4 +1,4 @@
-from OPTIMUS import amaan, HANDLER
+from OPTIMUS import amaan, HANDLER, SUDO_USERS
 from pyrogram import filters
 import html
 import os
@@ -12,6 +12,7 @@ __HELP__ = f"""
 # mention user 
 
 @amaan.on_message(filters.command("mention", HANDLER) & filters.me)
+@amaan.on_message(filters.command("mention", HANDLER) & filters.user(SUDO_USERS))
 async def mention(client, message):
     args = message.text.split(None, 2)
     if len(args) == 3:
@@ -35,6 +36,7 @@ def mention_html(user_id, name):
 
 
 @amaan.on_message(filters.command("tagall", HANDLER) & filters.me)
+@amaan.on_message(filters.command("tagall", HANDLER) & filters.user(SUDO_USERS))
 async def tag_all_users(client, message):
     await message.delete()
     if len(message.text.split()) >= 2:
