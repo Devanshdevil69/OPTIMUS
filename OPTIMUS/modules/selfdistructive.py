@@ -1,6 +1,6 @@
 import os
 from pyrogram import filters
-from OPTIMUS import amaan, HANDLER
+from OPTIMUS import amaan, HANDLER, SUDO_USERS
 
 
 __PLUGIN__ = os.path.basename(__file__.replace(".py", ""))
@@ -13,6 +13,7 @@ USAGE :- TAG THAT MEDIA AND SEND
 
 
 @amaan.on_message(filters.command("selfd", HANDLER) & filters.me)
+@amaan.on_message(filters.command("selfd", HANDLER) & filters.user(SUDO_USERS))
 async def selfd(client, message):
   await message.delete()
   if not message.reply_to_message:
