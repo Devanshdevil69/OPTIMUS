@@ -1,7 +1,7 @@
 #For My own channel
 
 import os
-from OPTIMUS import amaan
+from OPTIMUS import amaan, SUDO_USERS
 from pyrogram import filters
 
 
