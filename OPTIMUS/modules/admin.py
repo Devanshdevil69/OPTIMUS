@@ -1,7 +1,7 @@
 import os
 from pyrogram import filters
 from pyrogram.types import ChatPermissions
-from OPTIMUS import amaan, HANDLER
+from OPTIMUS import amaan, HANDLER ,SUDO_USERS
 import asyncio
 from OPTIMUS.helpers.one import get_arg, get_args
 
@@ -9,6 +9,7 @@ __PLUGIN__ = os.path.basename(__file__.replace(".py", ""))
 
 #----------- BAN ---------------#
 @amaan.on_message(filters.command("ban", HANDLER) & filters.me)
+@amaan.on_message(filters.command("ban", HANDLER) & filters.user(SUDO_USERS))
 async def ban(client, message):
     if message.reply_to_message.from_user:
         userid=message.reply_to_message.from_user.id 
@@ -46,6 +47,7 @@ async def ban(client, message):
 #-------------UNBAN-------------------#
 
 @amaan.on_message(filters.command("unban", HANDLER) & filters.me)
+@amaan.on_message(filters.command("unban", HANDLER) & filters.user(SUDO_USERS))
 async def unban(client, message):
     if message.reply_to_message.from_user:
         userid=message.reply_to_message.from_user.id 
@@ -82,6 +84,7 @@ async def unban(client, message):
 #--------------KICK-----------------#
 
 @amaan.on_message(filters.command("kick", HANDLER) & filters.me)
+@amaan.on_message(filters.command("kick", HANDLER) & filters.user(SUDO_USERS))
 async def kick(client, message):
     if message.reply_to_message.from_user:
         userid=message.reply_to_message.from_user.id 
@@ -120,6 +123,7 @@ async def kick(client, message):
 #-------------MUTE-------------------#
 
 @amaan.on_message(filters.command("mute", HANDLER) & filters.me)
+@amaan.on_message(filters.command("mute", HANDLER) & filters.user(SUDO_USERS))
 async def mute(client, message):
     if message. reply_to_message.from_user:
         userid=message.reply_to_message.from_user.id 
@@ -155,6 +159,7 @@ async def mute(client, message):
 #--------------UNMUTE----------------------#
 
 @amaan.on_message(filters.command("unmute", HANDLER) & filters.me)
+@amaan.on_message(filters.command("unmute", HANDLER) & filters.user(SUDO_USERS))
 async def unmute(client, message):
     if message. reply_to_message.from_user:
         userid=message.reply_to_message.from_user.id 
@@ -191,6 +196,7 @@ async def unmute(client, message):
 #-----------------PIN & UNPIN------------------------#
 
 @amaan.on_message(filters.command("pin", HANDLER) & filters.me)
+@amaan.on_message(filters.command("pin", HANDLER) & filters.user(SUDO_USERS))
 async def pin(client, message):
     if not message.reply_to_message:
         return await message.edit_text("`uff! uh fool. Reply to any message to pin")
@@ -204,6 +210,7 @@ async def pin(client, message):
     await message.delete()
 
 @amaan.on_message(filters.command("unpin", HANDLER) & filters.me)
+@amaan.on_message(filters.command("unpin", HANDLER) & filters.user(SUDO_USERS))
 async def unpin(client, message):
     if not message.reply_to_message:
         return await message.edit_text("`uff! uh fool. Reply to any message to pin")
@@ -219,6 +226,7 @@ async def unpin(client, message):
 #----------------PROMOTE & DEMOTE -----------------#
 
 @amaan.on_message(filters.command("promote", HANDLER) & filters.me)
+@amaan.on_message(filters.command("promote", HANDLER) & filters.user(SUDO_USERS))
 async def promote(client, message):
     try:
         title = "Admin"
@@ -247,6 +255,7 @@ async def promote(client, message):
             pass
 
 @amaan.on_message(filters.command("demote", HANDLER) & filters.me)
+@amaan.on_message(filters.command("demote", HANDLER) & filters.user(SUDO_USERS))
 async def demote(client, message):
     try:
         reply = message.reply_to_message
