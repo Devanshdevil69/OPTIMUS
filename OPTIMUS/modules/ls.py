@@ -1,4 +1,4 @@
-from OPTIMUS import amaan, HANDLER
+from OPTIMUS import amaan, HANDLER, SUDO_USERS
 from pyrogram import filters
 import os
 
@@ -10,6 +10,7 @@ __HELP__ = f"""
 """
 
 @amaan.on_message(filters.command("ls", HANDLER) & filters.me)
+@amaan.on_message(filters.command("ls", HANDLER) & filters.user(SUDO_USERS))
 async def ls(client, message):
     args = message.text.split(None, 1)
     if len(args) == 2:
