@@ -1,6 +1,6 @@
 import os
 from pyrogram import filters
-from OPTIMUS import amaan, HANDLER
+from OPTIMUS import amaan, HANDLER ,SUDO_USERS
 from OPTIMUS.modules import ALL_PLUGINS
 from OPTIMUS import HELP_COMMANDS
 
@@ -14,6 +14,7 @@ To get help for any command, just type `{HANDLER}help` plugin name
 
 
 @amaan.on_message(filters.command("plugins", HANDLER) & filters.me)
+@amaan.on_message(filters.command("plugins", HANDLER) & filters.user(SUDO_USERS))
 async def list_plugins(client, message):
     # Some Variables
     mods = ""
@@ -29,6 +30,7 @@ async def list_plugins(client, message):
 
 
 @amaan.on_message(filters.command("help", HANDLER) & filters.me)
+@amaan.on_message(filters.command("help", HANDLER) & filters.user(SUDO_USERS))
 async def help_me(client, message):
     if len(message.command) == 1:
         await message.edit_text(HELP_DEFAULT)
