@@ -2,7 +2,7 @@ import os
 from telegraph import upload_file
 
 from pyrogram import filters
-from OPTIMUS import amaan, HANDLER
+from OPTIMUS import amaan, HANDLER, SUDO_USERS
 
 
 __PLUGIN__ = os.path.basename(__file__.replace(".py", ""))
@@ -16,6 +16,7 @@ Reply to Media as args to upload it to telegraph.
 
 
 @amaan.on_message(filters.command("telegraph", HANDLER) & filters.me)
+@amaan.on_message(filters.command("telegraph", HANDLER) & filters.user(SUDO_USERS))
 async def telegraph(client, message):
     replied = message.reply_to_message
     if not replied:
