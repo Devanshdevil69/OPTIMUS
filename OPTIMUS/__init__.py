@@ -33,17 +33,25 @@ amaan = Client(
     SESSION,
     api_id=API_ID,
     api_hash=API_HASH,
- plugins=dict(root="OPTIMUS/modules/")
+ plugins=dict(root=f"OPTIMUS/modules")
 )
 
 # start time
 
 StartTime = datetime.now()
 
+# help starter
+
+async def start(self):
+        await super().start()
+        result = load_cmds(ALL_PLUGINS)
+        log.info(result)
+
+
 # for help command
 
 HELP_COMMANDS = {}
-"""
+
 def load_cmds(ALL_PLUGINS):
     for oof in ALL_PLUGINS:
         if oof.lower() == "help":
@@ -62,27 +70,8 @@ def load_cmds(ALL_PLUGINS):
         if hasattr(imported_module, "__HELP__") and imported_module.__HELP__:
             HELP_COMMANDS[imported_module.__PLUGIN__.lower()] = imported_module.__HELP__
     return "Done Loading Plugins and Commands!"
-"""
-# another help
 
-for all_plugins in ALL_PLUGINS:
-            imported_module = importlib.import_module(
-                "OPTIMUS.modules." + all_plugins
-            )
-            if (
-                hasattr(imported_module, "__PLUGIN__")
-                and imported_module.__PLUGIN__
-            ):
-                imported_module.__PLUGIN__ = imported_module.__PLUGIN__
-                if (
-                    hasattr(imported_module, "__HELP__")
-                    and imported_module.__HELP__
-                ):
-                    HELP_COMMANDS[
-                        imported_module.__PLUGIN__.lower()
-                    ] = imported_module
 
-                    
 # edit or reply
 
 async def edit_or_reply(msg: Message, **kwargs):
