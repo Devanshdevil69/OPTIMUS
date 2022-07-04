@@ -32,7 +32,8 @@ log.info(" OPTIMUS is Started TRY .help or .alive ")
 amaan = Client(
     SESSION,
     api_id=API_ID,
-    api_hash=API_HASH
+    api_hash=API_HASH,
+ plugins=dict(root="modules")
 )
 
 # start time
