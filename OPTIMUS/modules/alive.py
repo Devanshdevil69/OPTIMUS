@@ -36,4 +36,4 @@ async def alive(client, message):
     text += f"\nPyrogram Version: `{__version__}`"
     text += f"\nCurrent Uptime: `{str(datetime.now() - StartTime).split('.')[0]}`"
     
-    await amaan.send_message(text, ALIVE_PIC)
+    await amaan.send_document(text, ALIVE_PIC)
