@@ -36,4 +36,4 @@ async def alive(client, message):
     text += f"\nPyrogram Version: `{__version__}`"
     text += f"\nCurrent Uptime: `{str(datetime.now() - StartTime).split('.')[0]}`"
     
-    await client.send_photo(text, ALIVE_PIC)
+    await client.send_media(text, ALIVE_PIC)
