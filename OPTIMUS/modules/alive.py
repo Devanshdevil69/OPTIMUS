@@ -35,7 +35,7 @@ async def alive(client, message):
     text += f"\nPython Version: `{version_info[0]}.{version_info[1]}.{version_info[2]}`"
     text += f"\nPyrogram Version: `{__version__}`"
     text += f"\nCurrent Uptime: `{str(datetime.now() - StartTime).split('.')[0]}`"
-
+    try:
         if ".jpg" in ALIVE_PIC or ".png" in ALIVE_PIC:
     await client.send_photo(message.chat.id, ALIVE_PIC, caption=text)
         if ".mp4" in ALIVE_PIC or ".MP4," in ALIVE_PIC:
