@@ -37,7 +37,7 @@ async def alive(client, message):
     text += f"\nCurrent Uptime: `{str(datetime.now() - StartTime).split('.')[0]}`"
 
     await client.send_photo(message.chat.id, ALIVE_PIC, caption=text)
-except Exception:
-  pass
+ except Exception:
+   pass
  try:
     await client.send_video(message.chat.id, ALIVE_PIC, caption=text)
