@@ -38,6 +38,6 @@ async def alive(client, message):
 
     await client.send_photo(message.chat.id, ALIVE_PIC, caption=text)
     except Exception:
-                     pass
+           pass
  try:
     await client.send_video(message.chat.id, ALIVE_PIC, caption=text)
