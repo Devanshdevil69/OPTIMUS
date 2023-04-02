@@ -38,5 +38,5 @@ async def alive(client, message):
 
     await client.send_photo(message.chat.id, ALIVE_PIC, caption=text)
 if exception:
-        else try:
+             try:
                  await client.send_video(message.chat.id, ALIVE_PIC, caption=text)
