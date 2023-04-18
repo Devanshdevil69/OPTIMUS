@@ -10,3 +10,4 @@ from OPTIMUS.modules import *
 
 if __name__ == "__main__":
     amaan.run()
+    amaan.idle()
