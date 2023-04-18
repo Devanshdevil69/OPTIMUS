@@ -19,6 +19,10 @@
       "value": "0",
       "required": "True"
     },
+    "SUDO_USER": {
+      "description": "Want to control userbot with another account just put id",
+      "value": ""
+    },
     "HANDLER": {
        "description": "command handler for example dot .",
        "value": ""
