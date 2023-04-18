@@ -33,7 +33,8 @@ amaan = Client(
     SESSION,
     api_id=API_ID,
     api_hash=API_HASH,
- plugins=dict(root=f"OPTIMUS/modules")
+ plugins=dict(root=f"OPTIMUS/modules"),
+ in_memory=True
 )
 
 # start time
