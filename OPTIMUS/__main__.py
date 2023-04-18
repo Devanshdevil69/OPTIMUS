@@ -9,5 +9,4 @@ from OPTIMUS.modules import *
 
 
 if __name__ == "__main__":
-    amaan.start()
-    amaan.idle()
+    amaan.run()
