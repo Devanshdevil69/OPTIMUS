@@ -12,6 +12,6 @@ API_HASH = input("enter Telegram API HASH: ")
 with Client(":memory:", api_id=APP_ID, api_hash=API_HASH) as app:
         app.send_message(
             "me",
-            f"#STRING_SESSION\n\n```{app.export_session_string()}``` **TAP TO COPY**"
+            f"#STRING_SESSION\n\n`{app.export_session_string()}`\n\n **TAP TO COPY**"
         )
         print("Done !, session string has been sent to saved messages!")
