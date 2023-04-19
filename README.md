@@ -22,11 +22,18 @@
 
 ## Using Heroku
 ---
-- Click Deploy Icon
+- Click on Deploy Icon
 - Give App Name And Fill The ENV VARS.
 - Click Deploy
 ---
 [![Deploy](https://www.herokucdn.com/deploy/button.svg)](https://heroku.com/deploy?template=https://github.com/CRiMiNaL786/OPTIMUS)
+## Using Railway
+---
+- Click on Deploy Icon
+- Fill All Vars
+- Click Deploy
+---
+[![Deploy on Railway](https://railway.app/button.svg)](https://railway.app/template/2fY_Nf?referralCode=eHiyxF)
 ## Locally
 ---
 ```sh
