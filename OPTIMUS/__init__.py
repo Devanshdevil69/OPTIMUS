@@ -9,7 +9,7 @@ from pyrogram.types import Message
 
 API_ID = int(os.environ["API_ID"])
 API_HASH = os.environ["API_HASH"]
-SESSION = os.environ["SESSION_STRING"]
+session_string = os.environ["SESSION_STRING"]
 LOGGER = logging.getLogger(__name__)
 HANDLER = os.environ["HANDLER"]
 SUDO_USERS = os.environ["SUDO_USERS"]
@@ -30,7 +30,7 @@ log.info(" OPTIMUS is Started TRY .help or .alive ")
 # client
 
 amaan = Client(
-    SESSION,
+    session_string,
     api_id=API_ID,
     api_hash=API_HASH,
  plugins=dict(root=f"OPTIMUS/modules"),
