@@ -9,7 +9,7 @@ from pyrogram.types import Message
 
 API_ID = int(os.environ["API_ID"])
 API_HASH = os.environ["API_HASH"]
-session_string = os.environ["SESSION_STRING"]
+SESSION = os.environ["SESSION_STRING"]
 LOGGER = logging.getLogger(__name__)
 HANDLER = os.environ["HANDLER"]
 SUDO_USERS = os.environ["SUDO_USERS"]
@@ -30,7 +30,7 @@ log.info(" OPTIMUS is Started TRY .help or .alive ")
 # client
 
 amaan = Client(
-    session_string,
+    SESSION,
     api_id=API_ID,
     api_hash=API_HASH,
  plugins=dict(root=f"OPTIMUS/modules"),
@@ -55,7 +55,7 @@ HELP_COMMANDS = {}
 
 def load_cmds(ALL_PLUGINS):
     for oof in ALL_PLUGINS:
-        if oof.lower() == "help":
+        if oof.lower() == ".help":
             continue
         imported_module = importlib.import_module("OPTIMUS.modules." + oof)
         if not hasattr(imported_module, "__PLUGIN__"):
