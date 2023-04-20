@@ -24,8 +24,8 @@ async def list_plugins(client, message):
     for plug in modules:
         mods += f"`{plug}`\n"
         mod_num += 1
-    all_plugins = f"<b><u>{mod_num}</u> Modules Currently Loaded:</b>\n\n" + mods
-    await message.edit_text(all_plugins)
+    ALL_PLUGINS = f"<b><u>{mod_num}</u> Modules Currently Loaded:</b>\n\n" + mods
+    await message.edit_text(ALL_PLUGINS)
     return
 
 
