@@ -10,6 +10,7 @@ from pyrogram.types import Message
 API_ID = int(os.environ["API_ID"])
 API_HASH = os.environ["API_HASH"]
 SESSION = os.environ["SESSION_STRING"]
+BOT_TOKEN = os.environ["BOT_TOKEN"]
 LOGGER = logging.getLogger(__name__)
 HANDLER = os.environ["HANDLER"]
 SUDO_USERS = os.environ["SUDO_USERS"]
@@ -33,6 +34,7 @@ amaan = Client(
     SESSION,
     api_id=API_ID,
     api_hash=API_HASH,
+    bot_token=BOT_TOKEN,
  plugins=dict(root=f"OPTIMUS/modules"),
  in_memory=True
 )
