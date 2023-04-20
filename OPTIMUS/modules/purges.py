@@ -112,5 +112,5 @@ async def purge_myself(client, message):
 async def delete_replied(client, message):
     msg_ids = [message.id]
     if message.reply_to_message:
-        msg_ids.append(message.reply_to_message.message_id)
+        msg_ids.append(message.reply_to_message.id)
     await client.delete_messages(message.chat.id, msg_ids)
