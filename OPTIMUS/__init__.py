@@ -31,10 +31,10 @@ log.info(" OPTIMUS is Started TRY .help or .alive ")
 # client
 
 amaan = Client(
-    SESSION,
+    amaan,
     api_id=API_ID,
     api_hash=API_HASH,
-    bot_token=BOT_TOKEN,
+    session_string=SESSION_STRING,
  plugins=dict(root=f"OPTIMUS/modules"),
  in_memory=True
 )
