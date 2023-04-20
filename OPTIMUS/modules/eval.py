@@ -33,9 +33,9 @@ async def evaluate(client, message):
     except IndexError:
         await status_message.delete()
         return
-    reply_to_id = message.message_id
-    if message.reply_to_message:
-        reply_to_id = message.reply_to_message.message_id
+    reply_to_id = Message.message_id
+    if Message.reply_to_message:
+        reply_to_id = Message.reply_to_message.message_id
     old_stderr = sys.stderr
     old_stdout = sys.stdout
     redirected_output = sys.stdout = StringIO()
