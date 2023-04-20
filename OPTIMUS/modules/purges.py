@@ -43,7 +43,7 @@ async def purge(client, message):
         datetime.now()
         from_user = None
         start_message = message.reply_to_message.message_id
-        end_message = message.message_id
+        end_message = message.id
         list_of_messages = await client.get_messages(chat_id=message.chat.id,
                                                     message_ids=range(start_message, end_message),
                                                     replies=0)
@@ -58,9 +58,9 @@ async def purge(client, message):
                 list_of_messages_to_delete = []
             if from_user is not None:
                 if a_message.from_user == from_user:
-                    list_of_messages_to_delete.append(a_message.message_id)
+                    list_of_messages_to_delete.append(a_message.id)
             else:
-                list_of_messages_to_delete.append(a_message.message_id)
+                list_of_messages_to_delete.append(a_message.id)
         await client.delete_messages(chat_id=message.chat.id,
                                     message_ids=list_of_messages_to_delete,
                                     revoke=True)
@@ -110,7 +110,7 @@ async def purge_myself(client, message):
 @amaan.on_message(filters.command("del", HANDLER) & filters.me)
 @amaan.on_message(filters.command("del", HANDLER) & filters.user(SUDO_USERS))
 async def delete_replied(client, message):
-    msg_ids = [message.message_id]
+    msg_ids = [message.id]
     if message.reply_to_message:
         msg_ids.append(message.reply_to_message.message_id)
     await client.delete_messages(message.chat.id, msg_ids)
