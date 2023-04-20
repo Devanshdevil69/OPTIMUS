@@ -78,7 +78,7 @@ async def purge_myself(client, message):
         target = int(message.text.split()[1])
     else:
         await message.edit("Give me a number for a range!")
-    get_msg = await client.get_chat_history(message.chat.id)
+    get_msg = client.get_chat_history(message.chat.id)
     listall = []
     counter = 0
     for x in get_msg:
