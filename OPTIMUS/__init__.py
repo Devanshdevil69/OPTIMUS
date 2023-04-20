@@ -35,7 +35,7 @@ amaan = Client(
     api_id=API_ID,
     api_hash=API_HASH,
     session_string=SESSION_STRING,
- plugins=dict(root=f"OPTIMUS/modules"),
+ plugins=dict(root=f"modules"),
  in_memory=True
 )
 
