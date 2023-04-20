@@ -47,7 +47,7 @@ StartTime = datetime.now()
 
 async def start(self):
         await super().start()
-        result = load_cmds(ALL_PLUGINS)
+        result = load_cmds(plugins)
         log.info(result)
 
 
