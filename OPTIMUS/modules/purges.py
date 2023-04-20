@@ -42,7 +42,7 @@ async def purge(client, message):
     if message.reply_to_message:
         datetime.now()
         from_user = None
-        start_message = message.reply_to_message.message_id
+        start_message = message.reply_to_message.id
         end_message = message.id
         list_of_messages = await client.get_messages(chat_id=message.chat.id,
                                                     message_ids=range(start_message, end_message),
