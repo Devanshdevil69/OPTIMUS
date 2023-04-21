@@ -50,7 +50,7 @@ StartTime = datetime.now()
 
 async def start(self):
         await super().start()
-        result = load_cmds(ALL_PLUGINS)
+        result = load_cmds(ALL_MODULES)
         log.info(result)
 
 
