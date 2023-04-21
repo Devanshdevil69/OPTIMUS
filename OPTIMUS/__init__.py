@@ -29,8 +29,11 @@ log.info("OPTIMUS Userbot | Powered By AMAAN THE GAMER KING | Licensed under GPL
 log.info(" OPTIMUS is Started TRY .help or .alive ")
 
 # client
-async def super():
-                  amaan = Client(
+class amaan(Client):
+    def __init__(self):
+        name = self.__class__.__name__.lower()
+
+        super().__init__(
     "amaan",
     api_id=API_ID,
     api_hash=API_HASH,
