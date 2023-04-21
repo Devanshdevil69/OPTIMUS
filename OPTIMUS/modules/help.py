@@ -1,7 +1,7 @@
 import os
 from pyrogram import filters
 from OPTIMUS import amaan, HANDLER ,SUDO_USERS
-from OPTIMUS.modules import ALL_PLUGINS
+from OPTIMUS.modules import ALL_MODULES
 from OPTIMUS import HELP_COMMANDS
 
 HELP_DEFAULT = f"""
@@ -24,8 +24,8 @@ async def list_plugins(client, message):
     for plug in modules:
         mods += f"`{plug}`\n"
         mod_num += 1
-    ALL_PLUGINS = f"<b><u>{mod_num}</u> Modules Currently Loaded:</b>\n\n" + mods
-    await message.edit_text(ALL_PLUGINS)
+    ALL_MODULES = f"<b><u>{mod_num}</u> Modules Currently Loaded:</b>\n\n" + mods
+    await message.edit_text(ALL_MODULES)
     return
 
 
