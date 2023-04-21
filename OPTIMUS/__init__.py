@@ -35,7 +35,7 @@ amaan = Client(
     api_id=API_ID,
     api_hash=API_HASH,
     session_string=SESSION_STRING,
- plugins=dict(root=f"modules"),
+ plugins=dict(root=f"OPTIMUS/modules"),
  in_memory=True
 )
 
@@ -47,7 +47,7 @@ StartTime = datetime.now()
 
 async def start(self):
         await super().start()
-        result = load_cmds(plugins)
+        result = load_cmds(ALL_PLUGINS)
         log.info(result)
 
 
