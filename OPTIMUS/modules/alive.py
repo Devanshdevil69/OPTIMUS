@@ -6,7 +6,7 @@ import asyncio
 import time
 import os
 
-__mod_name__="Alive"
+__mod_name__= "Alive"
 __PLUGIN__ = os.path.basename(__file__.replace(".py", ""))
 __HELP__ = """
 **ALIVE AND PING**
