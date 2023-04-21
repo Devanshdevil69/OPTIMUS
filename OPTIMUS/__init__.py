@@ -6,8 +6,7 @@ from datetime import datetime
 import logging
 from inspect import getfullargspec
 from pyrogram.types import Message
-#
-from OPTIMUS.modules import ALL_PLUGINS
+
 
 API_ID = int(os.environ["API_ID"])
 API_HASH = os.environ["API_HASH"]
@@ -30,7 +29,7 @@ log.info("OPTIMUS Userbot | Powered By AMAAN THE GAMER KING | Licensed under GPL
 log.info(" OPTIMUS is Started TRY .help or .alive ")
 
 # client
-
+async def super():
 amaan = Client(
     "amaan",
     api_id=API_ID,
