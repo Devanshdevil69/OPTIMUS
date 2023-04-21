@@ -1,7 +1,6 @@
 import os
 from pyrogram import filters
 from OPTIMUS import amaan, HANDLER ,SUDO_USERS
-from OPTIMUS import ALL_MODULES
 from OPTIMUS import HELP_COMMANDS
 
 HELP_DEFAULT = f"""
