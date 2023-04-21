@@ -55,23 +55,23 @@ async def start(self):
 
 HELP_COMMANDS = {}
 
-def load_cmds(ALL_PLUGINS):
-    for oof in ALL_PLUGINS:
+def load_cmds(ALL_MODULES):
+    for oof in ALL_MODULES:
         if oof.lower() == "help":
             continue
         imported_module = importlib.import_module("OPTIMUS.modules." + oof)
-        if not hasattr(imported_module, "__PLUGIN__"):
-            imported_module.__PLUGIN__ = imported_module.__name__
+        if not hasattr(imported_module, "__modules__"):
+            imported_module.__modules__ = imported_module.__name__
 
-        if not imported_module.__PLUGIN__.lower() in HELP_COMMANDS:
-            HELP_COMMANDS[imported_module.__PLUGIN__.lower()] = imported_module
+        if not imported_module.__modules__.lower() in HELP_COMMANDS:
+            HELP_COMMANDS[imported_module.__modules__.lower()] = imported_module
         else:
             raise Exception(
                 "Can't have two modules with the same name! Please change one"
             )
 
         if hasattr(imported_module, "__help__") and imported_module.__help__:
-            HELP_COMMANDS[imported_module.__PLUGIN__.lower()] = imported_module.__help__
+            HELP_COMMANDS[imported_module.__modules__.lower()] = imported_module.__help__
     return "Done Loading Plugins and Commands!"
 
 
