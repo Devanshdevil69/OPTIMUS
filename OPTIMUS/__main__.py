@@ -12,4 +12,3 @@ async def start(self):
 
 if __name__ == "__main__":
     amaan.run()
-    amaan.idle()
