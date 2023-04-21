@@ -6,6 +6,7 @@ from datetime import datetime
 import logging
 from inspect import getfullargspec
 from pyrogram.types import Message
+from OPTIMUS.modules import ALL_PLUGINS
 
 API_ID = int(os.environ["API_ID"])
 API_HASH = os.environ["API_HASH"]
@@ -16,7 +17,6 @@ HANDLER = os.environ["HANDLER"]
 SUDO_USERS = os.environ["SUDO_USERS"]
 SUDO_USERS = [int(i) for i in SUDO_USERS.split()]
 ALIVE_PIC = "https://telegra.ph/file/38e0b251dfc0d267d9a89.jpg"
-ALL_PLUGINS = [ ]
 
 # the logging things
 
@@ -57,7 +57,7 @@ HELP_COMMANDS = {}
 
 def load_cmds(ALL_PLUGINS):
     for oof in ALL_PLUGINS:
-        if oof.lower() == ".help":
+        if oof.lower() == "help":
             continue
         imported_module = importlib.import_module("OPTIMUS.modules." + oof)
         if not hasattr(imported_module, "__PLUGIN__"):
@@ -70,8 +70,8 @@ def load_cmds(ALL_PLUGINS):
                 "Can't have two modules with the same name! Please change one"
             )
 
-        if hasattr(imported_module, "__HELP__") and imported_module.__HELP__:
-            HELP_COMMANDS[imported_module.__PLUGIN__.lower()] = imported_module.__HELP__
+        if hasattr(imported_module, "__help__") and imported_module.__help__:
+            HELP_COMMANDS[imported_module.__PLUGIN__.lower()] = imported_module.__help__
     return "Done Loading Plugins and Commands!"
 
 
