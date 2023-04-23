@@ -5,7 +5,6 @@ from datetime import datetime
 #from plugins import *
 import logging
 from inspect import getfullargspec
-from pyrogram.types import Message
 
 
 API_ID = int(os.environ["API_ID"])
@@ -77,7 +76,7 @@ def load_cmds(ALL_MODULES):
 
 # edit or reply
 
-async def edit_or_reply(msg: Message, **kwargs):
-    func = msg.edit_text if msg.from_user.is_self else msg.reply
+async def edit_or_reply(message, **kwargs):
+    func = message.edit_text if message.from_user.is_self else message.reply
     spec = getfullargspec(func.__wrapped__).args
     await func(**{k: v for k, v in kwargs.items() if k in spec})                    
