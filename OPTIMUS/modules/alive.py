@@ -23,7 +23,7 @@ async def ping(client, message):
     await message.delete()
     end = datetime.now()
     m_s = (end - start).microseconds / 1000 
-    await client.send_message(f"**🏓PoNG!**\n`{m_s} ms`")
+    await client.send_message(message.chat.id, f"**🏓PoNG!**\n`{m_s} ms`")
 
 #alive
 
