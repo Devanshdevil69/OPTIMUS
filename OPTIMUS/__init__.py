@@ -75,6 +75,7 @@ def load_cmds(ALL_MODULES):
 
 
 # edit or reply
+#yet not working idk why
 
 async def edit_or_reply(message, **kwargs):
     func = message.edit_text if message.from_user.is_self else message.reply_text
