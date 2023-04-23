@@ -20,7 +20,7 @@ USAGE :-
 @amaan.on_message(filters.command("ping", HANDLER) & filters.user(SUDO_USERS))
 async def ping(client, message):
     start = datetime.now()
-    await message.edit_text("`Pong!`")
+    await message.edit_or_reply_text("`Pong!`")
     end = datetime.now()
     m_s = (end - start).microseconds / 1000 
     await message.edit_or_reply_text(f"**🏓PoNG!**\n`{m_s} ms`")
