@@ -6,7 +6,6 @@ import asyncio
 import time
 import os
 
-__mod_name__= "Alive"
 __PLUGIN__ = os.path.basename(__file__.replace(".py", ""))
 __HELP__ = """
 **ALIVE AND PING**
@@ -25,6 +24,8 @@ async def ping(client, message):
     end = datetime.now()
     m_s = (end - start).microseconds / 1000 
     await message.edit_text(f"**🏓PoNG!**\n`{m_s} ms`")
+    else:
+    await message.reply_text(f"**🏓PoNG!**\n`{m_s} ms`")
 
 #alive
 
