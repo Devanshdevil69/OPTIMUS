@@ -46,7 +46,7 @@ StartTime = datetime.now()
 # help starter
 
 async def start():
-        await super().start()
+        await amaan.start()
         result = load_cmds(ALL_MODULES)
         log.info(result)
 
