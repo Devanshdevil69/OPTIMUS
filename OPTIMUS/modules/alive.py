@@ -1,4 +1,4 @@
-from OPTIMUS import amaan, HANDLER, StartTime, ALIVE_PIC ,SUDO_USERS
+from OPTIMUS import amaan, HANDLER, StartTime, ALIVE_PIC ,SUDO_USERS, edit_or_reply
 from pyrogram import filters, __version__
 from sys import version_info
 from datetime import datetime
@@ -23,11 +23,7 @@ async def ping(client, message):
     await message.edit_text("`Pong!`")
     end = datetime.now()
     m_s = (end - start).microseconds / 1000 
-    await message.edit_text(f"**🏓PoNG!**\n`{m_s} ms`")
-if Exception: 
-else: 
-     try:
-         await message.reply_text(f"**🏓PoNG!**\n`{m_s} ms`")
+    await message.edit_or_reply_text(f"**🏓PoNG!**\n`{m_s} ms`")
 
 #alive
 
