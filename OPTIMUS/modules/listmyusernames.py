@@ -15,7 +15,7 @@ USAGE :- {HANDLER}listmyusernames
 @amaan.on_message(filters.command("listmyusernames", HANDLER) & filters.me)
 @amaan.on_message(filters.command("listmyusernames", HANDLER) & filters.user(SUDO_USERS))
 async def listmun(client, message):
-    result = await client.send(GetAdminedPublicChannels())
+    result = await client.invoke(GetAdminedPublicChannels())
     output_str = ""
     for channel_obj in result.chats:
         output_str += f"{channel_obj.title}\n@{channel_obj.username}\n\n"
