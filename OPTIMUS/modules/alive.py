@@ -24,7 +24,7 @@ async def ping(client, message):
     end = datetime.now()
     m_s = (end - start).microseconds / 1000 
     await message.edit_text(f"**🏓PoNG!**\n`{m_s} ms`")
-if exception:
+if Exception:
              try:
                  await message.reply_text(f"**🏓PoNG!**\n`{m_s} ms`")
 
