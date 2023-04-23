@@ -77,6 +77,6 @@ def load_cmds(ALL_MODULES):
 # edit or reply
 
 async def edit_or_reply(message, **kwargs):
-    func = message.edit_text if message.from_user.is_self else message.reply
+    func = message.edit_text if message.from_user.is_self else message.reply_text
     spec = getfullargspec(func.__wrapped__).args
     await func(**{k: v for k, v in kwargs.items() if k in spec})                    
