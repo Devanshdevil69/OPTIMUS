@@ -25,7 +25,7 @@ async def ping(client, message):
     m_s = (end - start).microseconds / 1000 
     await message.edit_text(f"**🏓PoNG!**\n`{m_s} ms`")
 else:
-    await message.reply_text(f"**🏓PoNG!**\n`{m_s} ms`")
+     await message.reply_text(f"**🏓PoNG!**\n`{m_s} ms`")
 
 #alive
 
