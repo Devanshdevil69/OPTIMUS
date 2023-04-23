@@ -4,6 +4,7 @@ import math
 from datetime import datetime
 from pyrogram import filters
 from OPTIMUS import amaan, HANDLER, SUDO_USERS
+from pyrogram.errors import FloodWait
 
 __PLUGIN__ = os.path.basename(__file__.replace(".py", ""))
 __HELP__ = f"""
@@ -72,40 +73,23 @@ async def purge(client, message):
         await message.delete()
 
 
+
 @amaan.on_message(filters.command("purgeme", HANDLER) & filters.me)
 @amaan.on_message(filters.command("purgeme", HANDLER) & filters.user(SUDO_USERS))
-async def purge_myself(client, message):
-    if len(message.text.split()) >= 2 and message.text.split()[1].isdigit():
-        target = int(message.text.split()[1])
-    else:
-        await message.edit("Give me a number for a range!")
-    get_msg = await client.get_chat_history(message.chat.id)
-    listall = []
-    counter = 0
-    for x in get_msg:
-        if counter == target + 1:
-            break
-        if x.from_user.id == int(Owner):
-            listall.append(x.message_id)
-            counter += 1
-    if len(listall) >= 101:
-        total = len(listall)
-        semua = listall
-        jarak = 0
-        jarak2 = 0
-        for x in range(math.ceil(len(listall) / 100)):
-            if total >= 101:
-                jarak2 += 100
-                await client.delete_messages(message.chat.id, message_ids=semua[jarak:jarak2])
-                jarak += 100
-                total -= 100
-            else:
-                jarak2 += total
-                await client.delete_messages(message.chat.id, message_ids=semua[jarak:jarak2])
-                jarak += total
-                total -= total
-    else:
-        await client.delete_messages(message.chat.id, message_ids=listall)
+async def purgeme(client, message):
+ if message.reply_to_message:
+  await message.delete()
+  for x in range(message.reply_to_message.id, message.id):
+   try:
+    await client.delete_messages(
+      message.chat.id, x
+    )
+   except FloodWait as v:
+    await asyncio.sleep(v.value)
+   except Exception:
+    return False
+ else:
+  return await message.delete()
 
 
 @amaan.on_message(filters.command("del", HANDLER) & filters.me)
