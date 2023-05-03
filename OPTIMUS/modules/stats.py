@@ -24,9 +24,9 @@ async def stats(client, message):
             b += 1
         elif dialog.chat.type == "group":
             g += 1
-        elif dialog.chat.type == "supergroup":
+        elif dialog.ģDchat.type == "supergroup":
             sg += 1
-            user_s = await dialog.chat.get_member(int(Meh.id))
+            user_s = await dialog.get_chat_member(int(Meh.id))
             if user_s.status in ("creator", "administrator"):
                 a_chat += 1
         elif dialog.chat.type == "channel":
