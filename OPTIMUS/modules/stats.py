@@ -15,9 +15,9 @@ async def stats(client, message):
     c = 0
     b = 0
     a_chat = 0
-    Meh=await client.get_me()
+    Meh=await amaan.get_me()
     group = ["supergroup", "group"]
-    async for dialog in client.get_dialogs():
+    async for dialog in amaan.get_dialogs():
         if dialog.chat.type == "private":
             u += 1
         elif dialog.chat.type == "bot":
@@ -34,13 +34,13 @@ async def stats(client, message):
     end = datetime.now()
     ms = (end - start).seconds
     await message.edit_text(
-        """`⚡️ Your Stats Obtained in {} seconds ⚡️.`
-`💫 You have {} Private Messages 💫.`
-`✨ You are in {} Groups ✨.`
-`🔥 You are in {} Super Groups 🔥.`
-`⭐️ You Are in {} Channels ⭐️.`
-`🌟 You Are Admin in {} Chats 🌟.`
-`❇️ Bots = {} ❇️.`""".format(
+        """`⚡️ Your Stats Obtained in {} seconds ⚡️`
+`💫 You have {} Private Messages 💫`
+`✨ You are in {} Groups ✨`
+`🔥 You are in {} Super Groups 🔥`
+`⭐️ You Are in {} Channels ⭐️`
+`🌟 You Are Admin in {} Chats 🌟`
+`❇️ Bots = {} ❇️`""".format(
             ms, u, g, sg, c, a_chat, b
         )
     )
