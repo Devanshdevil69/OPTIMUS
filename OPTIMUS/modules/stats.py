@@ -15,9 +15,9 @@ async def stats(client, message):
     c = 0
     b = 0
     a_chat = 0
-    Meh=await amaan.get_me()
+    Meh = await client.get_me()
     group = ["supergroup", "group"]
-    async for dialog in amaan.get_dialogs():
+    async for dialog in client.get_dialogs():
         if dialog.chat.type == "private":
             u += 1
         elif dialog.chat.type == "bot":
