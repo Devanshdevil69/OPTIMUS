@@ -86,11 +86,10 @@ async def whois(client, message):
             disable_web_page_preview=True,
         )
     else:
-        dls = await client.download_media(pfp[0]["file_id"], file_name=f"{user.id}.png")
         await message.delete()
         await client.send_document(
             message.chat.id,
-            dls,
+            pfp,
             caption=infotext.format(
                 full_name=FullName(user),
                 user_id=user.id,
@@ -109,4 +108,4 @@ async def whois(client, message):
             if message.reply_to_message
             else None,
         )
-        os.remove(dls)
+        os.remove(pfp)
