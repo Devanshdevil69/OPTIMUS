@@ -1,6 +1,6 @@
 import os
 from datetime import datetime
-
+import asyncio
 from pyrogram import filters
 from pyrogram.types import User, InlineKeyboardMarkup, InlineKeyboardButton
 from pyrogram.raw import functions
@@ -65,7 +65,7 @@ async def whois(client, message):
         await message.reply("I don't know that User.")
         return
     common = await client.get_common_chats(user.id)
-    pfp = client.get_chat_photos(user.id)
+    pfp = await client.get_chat_photos(user.id)
     if not pfp:
         await message.edit_text(
             infotext.format(
@@ -85,7 +85,7 @@ async def whois(client, message):
             disable_web_page_preview=True,
         )
     else:
-        dls = client.download_media(pfp[0]["file_id"], file_name=f"{user.id}.png")
+        dls = await client.download_media(pfp[0]["file_id"], file_name=f"{user.id}.png")
         await message.delete()
         await client.send_document(
             message.chat.id,
