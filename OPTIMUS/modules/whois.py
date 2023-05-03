@@ -65,10 +65,9 @@ async def whois(client, message):
         await message.reply("I don't know that User.")
         return
     common = await client.get_common_chats(user.id)
-    if not pfp:
     async for pfp in client.get_chat_photos(user.id):
         print(pfp)
-    else:
+    if not pfp:
         await message.edit_text(
             infotext.format(
                 full_name=FullName(user),
