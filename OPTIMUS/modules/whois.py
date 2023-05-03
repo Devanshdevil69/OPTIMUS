@@ -16,10 +16,10 @@ def ReplyCheck(message):
     reply_id = None
 
     if message.reply_to_message:
-        reply_id = message.reply_to_message.message_id
+        reply_id = message.reply_to_message.id
 
     elif not message.from_user.is_self:
-        reply_id = message.message_id
+        reply_id = message.id
 
     return reply_id
 
@@ -104,7 +104,7 @@ async def whois(client, message):
                 contact=user.is_contact,
                 common=len(common),
             ),
-            reply_to_message_id=message.reply_to_message.message_id
+            reply_to_message_id=message.reply_to_message.id
             if message.reply_to_message
             else None,
         )
