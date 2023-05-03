@@ -87,7 +87,7 @@ async def whois(client, message):
         )
     else:
         await message.delete()
-        await client.send_document(
+        await client.send_photo(
             message.chat.id,
             pfp,
             caption=infotext.format(
