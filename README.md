@@ -46,5 +46,5 @@ python3 __main__.py
 ---
 
 
-# © Copyright 2022 
-## [MoHaMMaD AmaaN](t.me/Criminal786)
+# © Copyright 2022
+## OWNER [MoHaMMaD AmaaN](t.me/Criminal786)
