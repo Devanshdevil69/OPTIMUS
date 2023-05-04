@@ -7,9 +7,9 @@ import pyrogram
 from pyrogram import Client
 
 
-APP_ID = int(input("enter Telegram APP ID: "))
+API_ID = int(input("enter Telegram API ID: "))
 API_HASH = input("enter Telegram API HASH: ")
-with Client(":memory:", api_id=APP_ID, api_hash=API_HASH) as app:
+with Client(":memory:", api_id=API_ID, api_hash=API_HASH, in_memory=True) as app:
         app.send_message(
             "me",
             f"#STRING_SESSION\n\n`{app.export_session_string()}`\n\n **TAP TO COPY**"
