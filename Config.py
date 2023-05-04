@@ -1,7 +1,7 @@
 import os
-API_ID = int(os.environ.get("API_ID"))
-API_HASH = os.environ.get("API_HASH")
-SESSION_STRING = os.environ.get("SESSION_STRING")
-HANDLER = os.environ.get("HANDLER")
-OWNER_ID = int(os.environ.get("OWNER_ID"))
-SUDO_USERS = list(map(int, getenv("SUDO_USERS").split()))
+API_ID = 3124332
+API_HASH = 81901e2d9938b9625f15bc81f6998216
+SESSION_STRING = your session 
+HANDLER = .
+OWNER_ID = 511112479
+SUDO_USERS = 511112479
