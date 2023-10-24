@@ -10,7 +10,7 @@ from inspect import getfullargspec
 API_ID = int(os.environ["API_ID"])
 API_HASH = os.environ["API_HASH"]
 SESSION_STRING = os.environ["SESSION_STRING"]
-BOT_TOKEN = os.environ["BOT_TOKEN"]
+# BOT_TOKEN = os.environ["BOT_TOKEN"]
 LOGGER = logging.getLogger(__name__)
 HANDLER = os.environ["HANDLER"]
 SUDO_USERS = os.environ["SUDO_USERS"]
