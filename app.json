@@ -19,7 +19,7 @@
       "value": "0",
       "required": "True"
     },
-    "SUDO_USER": {
+    "SUDO_USERS": {
       "description": "Want to control userbot with another account just put id",
       "value": ""
     },
